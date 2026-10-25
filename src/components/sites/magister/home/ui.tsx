@@ -73,6 +73,10 @@ export const buttonStyles = {
     "border-2 border-white/50 px-7 py-[13px] text-[16px] text-white hover:border-white hover:bg-white/10 focus-visible:outline-white",
 };
 
+/** Text inputs on white cards (contact dialog, forms on the blog pages). */
+export const inputClass =
+  "min-h-[50px] w-full rounded-2xl border border-mg-line bg-white px-4 py-3 text-[15px] text-mg-ink placeholder:text-mg-muted/70 transition-colors focus:border-mg-purple focus:outline-none";
+
 export function ButtonArrow() {
   return <ArrowIcon className="size-[18px] transition-transform duration-300 group-hover:translate-x-1" />;
 }

@@ -5,19 +5,32 @@ export const HOME = "/sites/magister/home";
 
 export const homeLinks = {
   ...links,
-  resultados: "#resultados",
-  diferenciais: "#diferenciais",
-  especialistas: "#especialistas",
+  // Absolute so the header links also work from the blog pages.
+  resultados: "/#resultados",
+  diferenciais: "/#diferenciais",
+  especialistas: "/#especialistas",
+  planos: "/#assine",
+  blog: "/blog",
+  materiais: "/materiais-gratuitos",
+  contato: "/contato",
   instagram: "https://www.instagram.com/sapion.magister/",
   tiktok: "https://www.tiktok.com/@sapion.magister",
   youtube: "https://www.youtube.com/@sapion.magister",
 };
 
-export const navItems = [
+export interface HeaderLink {
+  label: string;
+  href: string;
+  /** Rendered as a dropdown on desktop and as chips in the mobile menu. */
+  children?: { label: string; href: string; description?: string }[];
+}
+
+export const navItems: HeaderLink[] = [
   { label: "Trilhas", href: links.trilhas },
   { label: "Diferenciais", href: homeLinks.diferenciais },
   { label: "Resultados", href: homeLinks.resultados },
-  { label: "Planos", href: links.assine },
+  { label: "Planos", href: homeLinks.planos },
+  { label: "Blog", href: homeLinks.blog },
   { label: "Governo", href: links.governo },
 ];
 

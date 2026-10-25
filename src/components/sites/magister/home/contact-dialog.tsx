@@ -1,22 +1,15 @@
 "use client";
 
-import { useEffect, useState, type FormEvent, type ReactNode } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 import { cn } from "@/lib/utils";
 import { CloseIcon } from "../icons";
-import { Magis } from "./ui";
-
-const field =
-  "min-h-[50px] w-full rounded-2xl border border-mg-line bg-white px-4 py-3 text-[15px] text-mg-ink placeholder:text-mg-muted/70 transition-colors focus:border-mg-purple focus:outline-none";
-
-// Same contract as the classic popup: set NEXT_PUBLIC_CONTACT_ENDPOINT to a URL that accepts a JSON POST.
-const endpoint = process.env.NEXT_PUBLIC_CONTACT_ENDPOINT;
-
-type Status = "idle" | "sending" | "sent" | "error" | "unconfigured";
+import { inputClass as field, Magis } from "./ui";
+import { leadEndpoints, leadMessages, useLeadForm } from "./use-lead-form";
 
 /** "Leve para sua escola ou órgão": a trigger button plus the contact form dialog it opens. */
 export function ContactDialog({ className, children }: { className?: string; children: ReactNode }) {
   const [open, setOpen] = useState(false);
-  const [status, setStatus] = useState<Status>("idle");
+  const { status, onSubmit, reset } = useLeadForm(leadEndpoints.contact, "popup-leve-para-sua-rede");
 
   useEffect(() => {
     if (!open) return;
@@ -32,34 +25,12 @@ export function ContactDialog({ className, children }: { className?: string; chi
     };
   }, [open]);
 
-  const onSubmit = async (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    if (!endpoint) {
-      setStatus("unconfigured");
-      return;
-    }
-    const form = event.currentTarget;
-    setStatus("sending");
-    try {
-      const response = await fetch(endpoint, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(Object.fromEntries(new FormData(form))),
-      });
-      if (!response.ok) throw new Error(String(response.status));
-      form.reset();
-      setStatus("sent");
-    } catch {
-      setStatus("error");
-    }
-  };
-
   return (
     <>
       <button
         type="button"
         onClick={() => {
-          setStatus("idle");
+          reset();
           setOpen(true);
         }}
         className={className}
@@ -121,9 +92,7 @@ export function ContactDialog({ className, children }: { className?: string; chi
                 {status === "sending" ? "Enviando…" : "Enviar"}
               </button>
               <p role="status" className="text-[14px] text-mg-muted empty:hidden tablet:col-span-2">
-                {status === "sent" && "Mensagem enviada com sucesso!"}
-                {status === "error" && "Não foi possível enviar sua mensagem. Tente novamente."}
-                {status === "unconfigured" && "O envio deste formulário ainda não está configurado."}
+                {status !== "idle" && status !== "sending" && leadMessages[status]}
               </p>
             </form>
           </div>

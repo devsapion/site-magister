@@ -392,3 +392,63 @@ body:has(.mg-home) {
 @media (prefers-reduced-motion: reduce) {
   .mg-rise { animation: none; }
 }
+
+/* Blog article body (HTML from the CMS snapshot). */
+.mg-prose {
+  color: #3d3966;
+  font-size: 17px;
+  line-height: 1.8;
+}
+.mg-prose > * + * { margin-top: 1.15em; }
+.mg-prose h2,
+.mg-prose h3,
+.mg-prose h4 {
+  color: var(--color-mg-ink);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+  scroll-margin-top: 110px;
+}
+.mg-prose h2 { margin-top: 2.2em; font-size: 28px; }
+.mg-prose h3 { margin-top: 1.8em; font-size: 21px; }
+.mg-prose h4 { margin-top: 1.5em; font-size: 18px; }
+.mg-prose strong { color: var(--color-mg-ink); font-weight: 600; }
+.mg-prose a {
+  color: var(--color-mg-purple);
+  font-weight: 500;
+  text-decoration: underline;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 3px;
+}
+.mg-prose a:hover { color: #5b1fc4; }
+.mg-prose ul,
+.mg-prose ol { padding-left: 1.4em; }
+.mg-prose ul { list-style: disc; }
+.mg-prose ol { list-style: decimal; }
+.mg-prose li { margin-top: 0.45em; padding-left: 0.25em; }
+.mg-prose li::marker { color: var(--color-mg-purple); font-weight: 700; }
+.mg-prose li > ul,
+.mg-prose li > ol { margin-top: 0.45em; }
+.mg-prose blockquote {
+  border-left: 4px solid var(--color-mg-purple);
+  border-radius: 0 20px 20px 0;
+  background: var(--color-mg-lilac);
+  color: var(--color-mg-ink);
+  font-size: 18px;
+  font-weight: 500;
+  padding: 1em 1.4em;
+}
+.mg-prose img,
+.mg-prose iframe {
+  width: 100%;
+  border-radius: 22px;
+}
+.mg-prose img { height: auto; }
+.mg-prose iframe { aspect-ratio: 16 / 9; height: auto; }
+.mg-prose figure { margin-block: 1.8em; }
+.mg-prose figcaption { margin-top: 0.6em; color: var(--color-mg-muted); font-size: 14px; text-align: center; }
+.mg-prose hr { border-color: var(--color-mg-line); margin-block: 2.5em; }
+.mg-prose table { width: 100%; border-collapse: collapse; font-size: 15px; }
+.mg-prose th,
+.mg-prose td { border: 1px solid var(--color-mg-line); padding: 0.6em 0.8em; text-align: left; }
+.mg-prose th { background: var(--color-mg-lilac); color: var(--color-mg-ink); }

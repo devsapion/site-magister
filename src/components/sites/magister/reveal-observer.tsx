@@ -5,6 +5,7 @@ import { useEffect } from "react";
 /**
  * Plays Elementor-style entrance animations: every `[data-animate]` element stays
  * hidden until it enters the viewport, then animates after its `data-delay` (ms).
+ * Elements added later (client-side navigation, pagination) are picked up too.
  */
 export function RevealObserver() {
   useEffect(() => {
@@ -20,10 +21,17 @@ export function RevealObserver() {
       },
       { threshold: 0 },
     );
-    document
-      .querySelectorAll<HTMLElement>("[data-animate]:not(.mg-animated)")
-      .forEach((el) => observer.observe(el));
-    return () => observer.disconnect();
+    const observeAll = () =>
+      document
+        .querySelectorAll<HTMLElement>("[data-animate]:not(.mg-animated)")
+        .forEach((el) => observer.observe(el));
+    observeAll();
+    const mutations = new MutationObserver(observeAll);
+    mutations.observe(document.body, { childList: true, subtree: true });
+    return () => {
+      mutations.disconnect();
+      observer.disconnect();
+    };
   }, []);
 
   return null;
