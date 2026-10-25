@@ -1,29 +1,36 @@
-import { CertificadoSection } from "./certificado-section";
-import { EcossistemaSection } from "./ecossistema-section";
-import { HeroSection } from "./hero-section";
-import { PageShell } from "./page-shell";
-import { PartnersSection } from "./partners-section";
-import { PricingSection } from "./pricing-section";
-import { SiteHeader } from "./site-header";
-import { TeamSection } from "./team-section";
-import { TrilhasSection } from "./trilhas-section";
-import { VideoSection } from "./video-section";
+import { CtaFinal } from "./home/cta-final";
+import { EspecialistasSection } from "./home/especialistas";
+import { FormacaoSection } from "./home/formacao";
+import { GlassHeader } from "./home/glass-header";
+import { Hero, NumbersRibbon } from "./home/hero";
+import { HomeFooter } from "./home/home-footer";
+import { ImpactoSection } from "./home/impacto";
+import { PlanosSection } from "./home/planos";
+import { ProvaSocialSection } from "./home/prova-social";
+import { TrilhasSection } from "./home/trilhas";
+import { RevealObserver } from "./reveal-observer";
 
-/** Home page of https://magister.sapion.com.br/ */
+/** Redesigned home of https://magister.sapion.com.br/ (structure inspired by tutormundi.com). */
 export function MagisterHome() {
   return (
-    <PageShell>
-      <SiteHeader />
+    <div className="mg-home overflow-x-clip bg-white font-lexend text-mg-ink">
+      <noscript>
+        <style>{"[data-animate]{visibility:visible!important}"}</style>
+      </noscript>
+      <GlassHeader />
       <main>
-        <HeroSection />
+        <Hero />
+        <NumbersRibbon />
         <TrilhasSection />
-        <VideoSection />
-        <PricingSection />
-        <EcossistemaSection />
-        <TeamSection />
-        <PartnersSection />
-        <CertificadoSection />
+        <EspecialistasSection />
+        <FormacaoSection />
+        <ImpactoSection />
+        <ProvaSocialSection />
+        <PlanosSection />
+        <CtaFinal />
       </main>
-    </PageShell>
+      <HomeFooter />
+      <RevealObserver />
+    </div>
   );
 }

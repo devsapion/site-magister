@@ -18,6 +18,15 @@
   --color-mg-blue: #474df0;
   --color-mg-light: #d9eafa;
   --color-mg-gray: #7a7a7a;
+
+  /* Redesigned home, matching the new platform (appmagister.com.br). */
+  --color-mg-ink: #1f1a5c;
+  --color-mg-muted: #5f5b80;
+  --color-mg-purple: #8443ea;
+  --color-mg-lilac: #f6f2ff;
+  --color-mg-line: #e9e2fa;
+  --color-mg-mint: #6ff782;
+  --color-mg-night: #1a0b45;
 }
 
 @theme inline {
@@ -28,6 +37,7 @@
   --font-heading: var(--font-sans);
   --font-poppins: var(--font-poppins-src), "Poppins", sans-serif;
   --font-roboto: var(--font-roboto-src), "Roboto", sans-serif;
+  --font-lexend: var(--font-lexend-src), "Lexend", sans-serif;
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -281,3 +291,104 @@
 }
 .mg-popup-in { animation: mg-popup-in 0.5s both; }
 .mg-drawer-in { animation: mg-drawer-in 0.5s both; }
+
+/* ------------------------------------------------------------------ */
+/* Redesigned home                                                     */
+/* ------------------------------------------------------------------ */
+
+/* Soft rise used by the new sections (shares the RevealObserver trigger). */
+@keyframes mg-fadeUp {
+  from { opacity: 0; transform: translate3d(0, 28px, 0); }
+  to { opacity: 1; transform: none; }
+}
+[data-animate="fadeUp"].mg-animated {
+  animation-name: mg-fadeUp;
+  animation-duration: 0.8s;
+  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Mint marker behind key words in headings. */
+.mg-mark {
+  background-image: linear-gradient(var(--color-mg-mint), var(--color-mg-mint));
+  background-repeat: no-repeat;
+  background-position: 0 88%;
+  background-size: 100% 0.36em;
+  padding-inline: 0.06em;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+/* Infinite marquee: the track holds two copies of its items and slides by half its width. */
+@keyframes mg-marquee {
+  to { transform: translate3d(-50%, 0, 0); }
+}
+.mg-marquee-track {
+  animation: mg-marquee var(--mg-marquee-duration, 40s) linear infinite;
+}
+.mg-marquee-reverse .mg-marquee-track {
+  animation-direction: reverse;
+}
+.mg-marquee:hover .mg-marquee-track,
+.mg-marquee:focus-within .mg-marquee-track {
+  animation-play-state: paused;
+}
+
+/* Gentle bobbing for the phones and Magis. */
+@keyframes mg-bob {
+  from { translate: 0 -7px; }
+  to { translate: 0 7px; }
+}
+.mg-bob {
+  animation: mg-bob 3.4s cubic-bezier(0.37, 0, 0.63, 1) infinite alternate;
+}
+.mg-bob-slow {
+  animation: mg-bob 4.6s cubic-bezier(0.37, 0, 0.63, 1) infinite alternate;
+}
+
+/* Dashes travelling along the "trail" lines. */
+@keyframes mg-dash {
+  to { stroke-dashoffset: -28; }
+}
+.mg-dash-flow {
+  animation: mg-dash 1.4s linear infinite;
+}
+
+/* Sparkles twinkling. */
+@keyframes mg-twinkle {
+  0%, 100% { opacity: 0.35; scale: 0.8; }
+  50% { opacity: 1; scale: 1; }
+}
+.mg-twinkle {
+  animation: mg-twinkle 2.8s ease-in-out infinite;
+}
+
+/* Fade between testimonials in the rotating card. */
+@keyframes mg-swap-in {
+  from { opacity: 0; transform: translate3d(0, 10px, 0); }
+  to { opacity: 1; transform: none; }
+}
+.mg-swap-in {
+  animation: mg-swap-in 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mg-marquee-track,
+  .mg-bob,
+  .mg-bob-slow,
+  .mg-dash-flow,
+  .mg-twinkle,
+  .mg-swap-in { animation: none; }
+}
+
+/* The layout paints the body purple for the classic pages; the new home is white. */
+body:has(.mg-home) {
+  background-color: #fff;
+}
+
+/* Entrance for above-the-fold copy: pure CSS, so it plays on first paint without waiting for JS. */
+.mg-rise {
+  animation: mg-fadeUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .mg-rise { animation: none; }
+}

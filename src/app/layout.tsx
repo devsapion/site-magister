@@ -26,6 +26,14 @@ const poppins = localFont({
   display: "swap",
 });
 
+// Font of the redesigned platform (appmagister.com.br), used by the new home.
+const lexend = localFont({
+  src: "../../public/sites/magister/fonts/lexend-latin.woff2",
+  variable: "--font-lexend-src",
+  weight: "300 800",
+  display: "swap",
+});
+
 const description =
   "Transformamos a formação de professores por meio da empatia, personalização e gamificação. Conheça as trilhas de aprendizagem da Sapion Magister.";
 
@@ -53,7 +61,7 @@ export default function RootLayout({
   return (
     <html
       lang="pt-BR"
-      className={`${sora.variable} ${roboto.variable} ${poppins.variable} antialiased`}
+      className={`${sora.variable} ${roboto.variable} ${poppins.variable} ${lexend.variable} antialiased`}
     >
       <body className="min-h-full bg-mg-violet font-sans text-[#333]">{children}</body>
     </html>
