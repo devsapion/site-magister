@@ -35,7 +35,7 @@ function FeaturedPosts({ posts }: { posts: BlogPost[] }) {
           <PostCover
             post={lead}
             sizes="(min-width: 1025px) 600px, 100vw"
-            preload
+            eager
             className="h-[220px] rounded-[28px] shadow-[0_30px_60px_-40px_rgba(60,20,140,0.6)] tablet:h-[350px]"
           />
           <CategoryPill slug={lead.category} className="mt-6 self-start" />
