@@ -53,7 +53,7 @@ export async function PostArticle({ post }: { post: BlogPost }) {
             <PostCover
               post={post}
               sizes="(min-width: 1025px) 580px, 100vw"
-              preload
+              eager
               className="mg-rise aspect-[16/10] rounded-[30px] shadow-[0_30px_60px_-40px_rgba(60,20,140,0.6)]"
             />
             <div className="mg-rise [animation-delay:100ms]">

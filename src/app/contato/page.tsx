@@ -46,10 +46,10 @@ export default function Page() {
         visual={
           <div className="relative mx-auto h-[360px] max-w-[440px] desktop:mx-0">
             <div className="absolute top-0 left-[4%] w-[44%] -rotate-[7deg]">
-              <PhoneFrame {...appScreens.inicio} sizes="200px" className="mg-bob" />
+              <PhoneFrame {...appScreens.inicio} sizes="200px" className="mg-bob" eager />
             </div>
             <div className="absolute top-6 right-[6%] w-[44%] rotate-[7deg]">
-              <PhoneFrame {...appScreens.ranking} sizes="200px" className="mg-bob-slow" />
+              <PhoneFrame {...appScreens.ranking} sizes="200px" className="mg-bob-slow" eager />
             </div>
             <Magis pose="selfie" sizes="160px" className="mg-bob absolute bottom-[-30px] left-1/2 w-[34%] -translate-x-1/2" />
           </div>

@@ -108,17 +108,17 @@ export function PostMeta({ post, className }: { post: BlogPost; className?: stri
   );
 }
 
-/** Post image, or a branded panel (category gradient + Magis) when the post has none. */
+/** Post image, or a branded panel (category gradient + Magis) when the post has none. `eager` above the fold. */
 export function PostCover({
   post,
   sizes,
   className,
-  preload,
+  eager,
 }: {
   post: BlogPost;
   sizes: string;
   className?: string;
-  preload?: boolean;
+  eager?: boolean;
 }) {
   const visual = categoryVisual(post.category);
   return (
@@ -129,7 +129,7 @@ export function PostCover({
           alt={post.cover.alt}
           fill
           sizes={sizes}
-          preload={preload}
+          loading={eager ? "eager" : undefined}
           className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
         />
       ) : (
@@ -150,15 +150,17 @@ export function PostCard({
   showCategory = false,
   showMeta = false,
   sizes = "(min-width: 1025px) 270px, (min-width: 768px) 45vw, 80vw",
+  eager,
 }: {
   post: BlogPost;
   showCategory?: boolean;
   showMeta?: boolean;
   sizes?: string;
+  eager?: boolean;
 }) {
   return (
     <article className="group relative flex h-full flex-col overflow-hidden rounded-[26px] border border-mg-line bg-white transition-all duration-300 hover:-translate-y-1 hover:border-transparent hover:shadow-[0_30px_60px_-34px_rgba(60,20,140,0.55)]">
-      <PostCover post={post} sizes={sizes} className="aspect-[16/9]" />
+      <PostCover post={post} sizes={sizes} eager={eager} className="aspect-[16/9]" />
       <div className="flex flex-1 flex-col p-5 tablet:p-6">
         {showCategory && <CategoryPill slug={post.category} className="mb-3 self-start" />}
         {showMeta && <PostMeta post={post} className="mb-3" />}
@@ -189,7 +191,8 @@ export function PostGrid({
     <ul className="grid gap-5 tablet:grid-cols-2 desktop:grid-cols-4">
       {posts.map((post, i) => (
         <li key={post.slug} data-animate="fadeUp" data-delay={(i % 4) * 80}>
-          <PostCard post={post} showCategory={showCategory} showMeta={showMeta} />
+          {/* The first row sits right under the listing hero: load it immediately. */}
+          <PostCard post={post} showCategory={showCategory} showMeta={showMeta} eager={i < 4} />
         </li>
       ))}
     </ul>

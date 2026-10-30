@@ -55,10 +55,10 @@ export function Hero() {
       {/* Desktop phones on both sides of the headline */}
       <div className="pointer-events-none absolute inset-x-0 top-[118px] mx-auto hidden h-[640px] max-w-[1440px] desktop:block">
         <div className="absolute top-[40px] left-[max(8px,calc(50%-670px))] w-[200px] -rotate-[9deg] xl:w-[250px]">
-          <PhoneFrame {...appScreens.inicio} className="mg-bob" sizes="250px" preload />
+          <PhoneFrame {...appScreens.inicio} className="mg-bob" sizes="250px" eager />
         </div>
         <div className="absolute top-[10px] right-[max(8px,calc(50%-670px))] w-[200px] rotate-[9deg] xl:w-[250px]">
-          <PhoneFrame {...appScreens.videos} className="mg-bob-slow" sizes="250px" preload />
+          <PhoneFrame {...appScreens.videos} className="mg-bob-slow" sizes="250px" eager />
         </div>
         <Magis
           pose="piscando"
@@ -104,10 +104,10 @@ export function Hero() {
         {/* Mobile and tablet: phones under the copy, cropped by the ribbon */}
         <div className="pointer-events-none relative mx-auto mt-12 h-[330px] max-w-[520px] overflow-hidden tablet:h-[440px] desktop:hidden">
           <div className="absolute top-[24px] left-[6%] w-[46%] -rotate-[7deg]">
-            <PhoneFrame {...appScreens.inicio} sizes="45vw" />
+            <PhoneFrame {...appScreens.inicio} sizes="45vw" eager />
           </div>
           <div className="absolute top-[4px] right-[6%] w-[46%] rotate-[7deg]">
-            <PhoneFrame {...appScreens.videos} sizes="45vw" />
+            <PhoneFrame {...appScreens.videos} sizes="45vw" eager />
           </div>
           <Magis pose="piscando" sizes="120px" className="mg-bob absolute top-[150px] left-1/2 w-[30%] -translate-x-1/2" />
         </div>

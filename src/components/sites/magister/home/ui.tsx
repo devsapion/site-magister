@@ -81,19 +81,19 @@ export function ButtonArrow() {
   return <ArrowIcon className="size-[18px] transition-transform duration-300 group-hover:translate-x-1" />;
 }
 
-/** iPhone-style frame around an app screenshot (920×2000). */
+/** iPhone-style frame around an app screenshot (920×2000). `eager` for frames above the fold. */
 export function PhoneFrame({
   src,
   alt,
   className,
   sizes = "280px",
-  preload,
+  eager,
 }: {
   src: string;
   alt: string;
   className?: string;
   sizes?: string;
-  preload?: boolean;
+  eager?: boolean;
 }) {
   return (
     <div
@@ -103,7 +103,7 @@ export function PhoneFrame({
       )}
     >
       <div className="relative aspect-[920/2000] overflow-hidden rounded-[15%/7%] bg-white">
-        <Image src={src} alt={alt} fill sizes={sizes} preload={preload} className="object-cover" />
+        <Image src={src} alt={alt} fill sizes={sizes} loading={eager ? "eager" : undefined} className="object-cover" />
         <span className="absolute top-[1.6%] left-1/2 h-[3.2%] w-[30%] -translate-x-1/2 rounded-full bg-black" />
       </div>
     </div>
