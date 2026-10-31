@@ -23,20 +23,13 @@ export type TrilhaSlug =
 
 /**
  * Single source for every learning track: the home cards and the /trilha-* pages both read
- * from here, so editing a title, description or icon updates every place it appears.
+ * from here, so editing a title or description updates every place it appears.
  */
 export interface Trilha {
   slug: TrilhaSlug;
   title: string;
   description: string;
   href: string;
-  /** Card color on the home page. */
-  color: string;
-  /** Background color at the top of the track page. */
-  pageColor: string;
-  icon: { src: string; width: number; height: number };
-  certificate: string;
-  delay: number;
 }
 
 export const trilhas: Trilha[] = [
@@ -46,44 +39,24 @@ export const trilhas: Trilha[] = [
       "Acesse tudo sobre metodologias ativas de aprendizagem, ferramentas digitais e os segredos da Nova Educação",
     slug: "trilha-inovacao",
     href: "/trilha-inovacao",
-    color: "#f79634",
-    pageColor: "#fea244",
-    icon: { src: `${ASSETS}/trilha-inovacao.png`, width: 63, height: 91 },
-    certificate: `${ASSETS}/certificados/inovacao.png`,
-    delay: 0,
   },
   {
     title: "Infância",
     description: "Aprenda tudo sobre o universo da criança em seus primeiros ciclos de aprendizagem",
     slug: "trilha-infancia",
     href: "/trilha-infancia",
-    color: "#ffed00",
-    pageColor: "#ffed00",
-    icon: { src: `${ASSETS}/trilha-infancia.png`, width: 73, height: 76 },
-    certificate: `${ASSETS}/certificados/infancia.png`,
-    delay: 200,
   },
   {
     title: "Skills",
     description: "Desenvolva suas competências técnicas e emocionais para brilhar na Nova Educação",
     slug: "trilha-skills",
     href: "/trilha-skills",
-    color: "#6ff782",
-    pageColor: "#6ff782",
-    icon: { src: `${ASSETS}/trilha-skills.png`, width: 73, height: 82 },
-    certificate: `${ASSETS}/certificados/skills.png`,
-    delay: 300,
   },
   {
     title: "Inclusão",
     description: "Torne-se um professor preparado para a educação especial e inclusiva",
     slug: "trilha-inclusao",
     href: "/trilha-inclusao",
-    color: "#36c0ec",
-    pageColor: "#37bfeb",
-    icon: { src: `${ASSETS}/trilha-inclusao.png`, width: 80, height: 86 },
-    certificate: `${ASSETS}/certificados/inclusao.png`,
-    delay: 400,
   },
   {
     title: "Gestão",
@@ -91,101 +64,12 @@ export const trilhas: Trilha[] = [
       "Aprofunde suas habilidades e competências sobre liderança e gestão educacional. Prepare-se para o próximo nível!",
     slug: "trilha-gestao",
     href: "/trilha-gestao",
-    color: "#c4c4c4",
-    pageColor: "#c4c4c4",
-    icon: { src: `${ASSETS}/trilha-gestao.png`, width: 101, height: 69 },
-    certificate: `${ASSETS}/certificados/gestao.png`,
-    delay: 500,
   },
 ];
 
 export function getTrilha(slug: string): Trilha | undefined {
   return trilhas.find((trilha) => trilha.slug === slug);
 }
-
-/** Highlights shown under the course list on every track page. */
-export const trilhaHighlights = {
-  workload: "200h",
-  items: [
-    { label: ["Aulas", "em vídeos"], icon: { src: `${ASSETS}/trilha/chip-videos.png`, width: 64, height: 73 } },
-    { label: ["E-books"], icon: { src: `${ASSETS}/trilha/chip-ebooks.png`, width: 45, height: 62 } },
-    { label: ["Cursos", "100% online"], icon: { src: `${ASSETS}/trilha/chip-online.png`, width: 63, height: 65 } },
-    { label: ["Atividades", "Práticas"], icon: { src: `${ASSETS}/trilha/chip-atividades.png`, width: 64, height: 66 } },
-  ],
-};
-
-export type Animation = "fadeIn" | "fadeInLeft" | "fadeInRight" | "fadeInDown";
-
-export interface Feature {
-  title: string;
-  icon: { src: string; width: number; height: number; mobileWidth: string };
-  animation: Animation;
-  paddingClassName: string;
-  /** Desktop placement in the staggered arch. */
-  desktopClassName: string;
-}
-
-export const features: Feature[] = [
-  {
-    title: "Adaptive Learning",
-    icon: { src: `${ASSETS}/feature-adaptive-learning.png`, width: 99, height: 53, mobileWidth: "50%" },
-    animation: "fadeInLeft",
-    paddingClassName: "py-[40px]",
-    desktopClassName: "mt-[129px] self-end",
-  },
-  {
-    title: "Gamificação",
-    icon: { src: `${ASSETS}/feature-gamificacao.png`, width: 70, height: 74, mobileWidth: "36%" },
-    animation: "fadeInLeft",
-    paddingClassName: "py-[40px]",
-    desktopClassName: "self-center",
-  },
-  {
-    title: "Análise de Perfil",
-    icon: { src: `${ASSETS}/feature-analise-perfil.png`, width: 88, height: 68, mobileWidth: "46%" },
-    animation: "fadeInDown",
-    paddingClassName: "py-[30px]",
-    desktopClassName: "self-start",
-  },
-  {
-    title: "Magister Club",
-    icon: { src: `${ASSETS}/feature-magister-club.png`, width: 77, height: 67, mobileWidth: "40%" },
-    animation: "fadeInRight",
-    paddingClassName: "py-[30px]",
-    desktopClassName: "self-center",
-  },
-  {
-    title: "Magister Labs",
-    icon: { src: `${ASSETS}/feature-magister-labs.png`, width: 48, height: 78, mobileWidth: "26%" },
-    animation: "fadeInRight",
-    paddingClassName: "py-[30px]",
-    desktopClassName: "mt-[130px] self-end",
-  },
-];
-
-export interface FlipCard {
-  title: string;
-  text: string;
-  frontColor: string;
-}
-
-export const flipCards: FlipCard[] = [
-  {
-    title: "Problema x Solução",
-    text: "Nossos produtos são criados para resolver um problema real da educação. Debruçamo-nos sobre a “dor” e desenvolvemos uma solução.",
-    frontColor: "#8341e9",
-  },
-  {
-    title: "Professores Especialistas",
-    text: "Nossas cursos são desenvolvidos por consultores, professores, pesquisadores, criativos, palestrantes, mágicos, pensadores, empreendedores e muito mais.",
-    frontColor: "#202266",
-  },
-  {
-    title: "Inovação e Educação",
-    text: "Nossas soluções são concebidas a partir da premissa da Nova Educação, a qual resulta da influência da transformação digital em todos os aspectos de nossas vidas.",
-    frontColor: "#8341e9",
-  },
-];
 
 export const subscriptionBenefits = [
   "Acesso imediato por um ano em todas as trilhas de aprendizagem;",
@@ -237,19 +121,6 @@ export const testimonialRows: Testimonial[][] = [
       name: "Luana Guasti",
     },
   ],
-];
-
-// Names and titles are part of each photo, as on the source page.
-export const team = [
-  { src: `${ASSETS}/team/vanessa.png`, alt: "Vanessa Martins, Mestre em Linguística" },
-  { src: `${ASSETS}/team/jose.png`, alt: "José Motta, Mestre em Tecnologias Emergentes na Educação" },
-  { src: `${ASSETS}/team/israel.png`, alt: "Israel Boniek, Doutor em Educação" },
-  { src: `${ASSETS}/team/giselle.png`, alt: "Giselle Frufrek, Mestre em Educação" },
-  {
-    src: `${ASSETS}/team/flavia.png`,
-    alt: "Flávia Rejane C. e Silva, Especialista em Análise do Comportamento Aplicada",
-  },
-  { src: `${ASSETS}/team/adriana.png`, alt: "Adriana Sperandio, Mestre em Educação" },
 ];
 
 export const partners = [

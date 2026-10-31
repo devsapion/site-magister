@@ -1,5 +1,6 @@
+import { getCatalogTotals } from "@/lib/magister/courses";
 import { cn } from "@/lib/utils";
-import { links } from "../content";
+import { links, trilhas } from "../content";
 import { ContactDialog } from "./contact-dialog";
 import { appScreens, platformNumbers } from "./home-content";
 import { buttonStyles, ButtonArrow, Magis, Mark, Marquee, PhoneFrame, SparkleIcon, StoreBadges } from "./ui";
@@ -81,8 +82,8 @@ export function Hero() {
           <p
             className="mg-rise mt-6 max-w-[580px] text-pretty text-[17px] leading-[1.6] text-mg-muted tablet:text-[19px] [animation-delay:200ms]"
           >
-            Por meio da empatia, personalização e gamificação. Metodologias ativas, ferramentas digitais e os
-            segredos da Nova Educação em uma só plataforma.
+            Combinamos tecnologia avançada e metodologias personalizadas para capacitar os educadores da sua rede,
+            garantindo impacto real na sala de aula e na aprendizagem dos alunos.
           </p>
           <div
             className="mg-rise mt-8 flex w-full flex-col items-center justify-center gap-3 tablet:w-auto tablet:flex-row [animation-delay:300ms]"
@@ -118,10 +119,18 @@ export function Hero() {
 
 /** Purple band with the platform numbers scrolling by. */
 export function NumbersRibbon() {
+  const totals = getCatalogTotals();
+  const numbers = [
+    { value: String(trilhas.length), label: "trilhas de aprendizagem" },
+    { value: String(totals.courses), label: "cursos no catálogo" },
+    { value: String(totals.modules), label: "módulos" },
+    { value: String(totals.videos), label: "videoaulas" },
+    ...platformNumbers,
+  ];
   return (
     <div className="relative z-[1] bg-[linear-gradient(100deg,#7a35e6_0%,#9b5cf6_55%,#b07cff_100%)] py-4 text-white shadow-[0_20px_40px_-24px_rgba(90,30,190,0.8)]">
       <Marquee label="A plataforma em números" durationS={36}>
-        {platformNumbers.map((item) => (
+        {numbers.map((item) => (
           <div key={item.label} className="flex shrink-0 items-center gap-3 pr-10 tablet:pr-14">
             <SparkleIcon className="size-4 text-mg-mint" />
             <span className="text-[22px] font-bold tablet:text-[26px]">{item.value}</span>

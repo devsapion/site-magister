@@ -155,29 +155,17 @@
   html {
     @apply font-sans;
   }
+  /* Tailwind v4 gives buttons the default arrow; clickable controls get the hand back. */
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
 }
 /* ------------------------------------------------------------------ */
 /* Sapion Magister                                                     */
 /* ------------------------------------------------------------------ */
 
-/* Elementor entrance animations: hidden until the element enters the viewport. */
-@keyframes mg-fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-@keyframes mg-fadeInLeft {
-  from { opacity: 0; transform: translate3d(-100%, 0, 0); }
-  to { opacity: 1; transform: none; }
-}
-@keyframes mg-fadeInRight {
-  from { opacity: 0; transform: translate3d(100%, 0, 0); }
-  to { opacity: 1; transform: none; }
-}
-@keyframes mg-fadeInDown {
-  from { opacity: 0; transform: translate3d(0, -100%, 0); }
-  to { opacity: 1; transform: none; }
-}
-
+/* Entrance animations: hidden until RevealObserver sees the element enter the viewport. */
 [data-animate] {
   visibility: hidden;
 }
@@ -186,98 +174,10 @@
   animation-duration: 1.25s;
   animation-fill-mode: both;
 }
-[data-animate="fadeIn"].mg-animated { animation-name: mg-fadeIn; }
-[data-animate="fadeInLeft"].mg-animated { animation-name: mg-fadeInLeft; }
-[data-animate="fadeInRight"].mg-animated { animation-name: mg-fadeInRight; }
-[data-animate="fadeInDown"].mg-animated { animation-name: mg-fadeInDown; }
-
-/* Happy Addons floating effects (anime.js, alternate loop, easeInOutSine). */
-@keyframes mg-float-sparkle {
-  from { translate: -3px -3px; }
-  to { translate: 8px 8px; }
-}
-@keyframes mg-float-certificate {
-  from { translate: 1px -8px; }
-  to { translate: 1px 16px; }
-}
-.mg-float-sparkle {
-  animation: mg-float-sparkle 3s cubic-bezier(0.37, 0, 0.63, 1) infinite alternate;
-}
-.mg-float-certificate {
-  animation: mg-float-certificate 1s cubic-bezier(0.37, 0, 0.63, 1) infinite alternate;
-}
-@keyframes mg-float-soft {
-  from { translate: -2px -2px; }
-  to { translate: 4px 4px; }
-}
-.mg-float-soft {
-  animation: mg-float-soft 2s cubic-bezier(0.37, 0, 0.63, 1) infinite alternate;
-}
 
 @media (prefers-reduced-motion: reduce) {
   [data-animate] { visibility: visible; }
-  [data-animate].mg-animated,
-  .mg-float-sparkle,
-  .mg-float-soft,
-  .mg-float-certificate { animation: none; }
-}
-
-/* Carousel: slide geometry is pure CSS so server and client render the same layout. */
-.mg-carousel {
-  --mg-pv: var(--mg-pv-m);
-  --mg-gap: var(--mg-gap-m);
-}
-@media (min-width: 48rem) {
-  .mg-carousel { --mg-pv: var(--mg-pv-t); --mg-gap: var(--mg-gap-t); }
-}
-@media (min-width: 64.0625rem) {
-  .mg-carousel { --mg-pv: var(--mg-pv-d); --mg-gap: var(--mg-gap-d); }
-}
-.mg-carousel-track {
-  display: flex;
-  gap: var(--mg-gap);
-  transform: translate3d(
-    calc(var(--mg-pos) * -1 * ((100% - (var(--mg-pv) - 1) * var(--mg-gap)) / var(--mg-pv) + var(--mg-gap))),
-    0,
-    0
-  );
-}
-.mg-carousel-slide {
-  flex: 0 0 calc((100% - (var(--mg-pv) - 1) * var(--mg-gap)) / var(--mg-pv));
-  min-width: 0;
-}
-
-/* Happy Addons flip box, "classic" effect flipping up. */
-.mg-flip-face {
-  backface-visibility: hidden;
-  transition: transform 0.6s cubic-bezier(0.2, 0.85, 0.4, 1.275);
-}
-.mg-flip-front {
-  transform: perspective(1000px) rotateX(0deg);
-}
-.mg-flip-back {
-  transform: perspective(1000px) rotateX(-180deg);
-}
-.mg-flip:hover .mg-flip-front,
-.mg-flip:focus-within .mg-flip-front {
-  transform: perspective(1000px) rotateX(180deg);
-}
-.mg-flip:hover .mg-flip-back,
-.mg-flip:focus-within .mg-flip-back {
-  transform: perspective(1000px) rotateX(0deg);
-}
-
-/* Feature cards swap to a green gradient on hover (Elementor background transition). */
-.mg-feature-card {
-  background-image: linear-gradient(180deg, #a05ff9 0%, #431093 100%);
-  border: 5px groove #a05ff9;
-  box-shadow: 0 0 10px 0 rgb(0 0 0 / 0.29);
-}
-.mg-feature-card:hover {
-  background-image: linear-gradient(180deg, #a9e9bb 0%, #78cfa3 100%);
-}
-.mg-feature-card:hover h3 {
-  color: #45108a;
+  [data-animate].mg-animated { animation: none; }
 }
 
 /* Contact popup entrance. */
@@ -285,12 +185,7 @@
   from { opacity: 0; }
   to { opacity: 1; }
 }
-@keyframes mg-drawer-in {
-  from { transform: translate3d(-100%, 0, 0); }
-  to { transform: none; }
-}
 .mg-popup-in { animation: mg-popup-in 0.5s both; }
-.mg-drawer-in { animation: mg-drawer-in 0.5s both; }
 
 /* ------------------------------------------------------------------ */
 /* Redesigned home                                                     */
@@ -391,6 +286,104 @@ body:has(.mg-home) {
 }
 @media (prefers-reduced-motion: reduce) {
   .mg-rise { animation: none; }
+}
+
+/* ------------------------------------------------------------------ */
+/* Track pages                                                         */
+/* ------------------------------------------------------------------ */
+
+/*
+ * Hero parallax. ParallaxScene sets --p (scroll progress through the hero, 0→1) and
+ * --mx/--my (pointer offset from the center, -1→1). Each layer picks how far it travels with
+ * --shift (px at the end of the scroll) and how much it follows the pointer with --depth (px).
+ */
+.mg-layer {
+  transform: translate3d(
+    calc(var(--mx, 0) * var(--depth, 0) * 1px),
+    calc(var(--p, 0) * var(--shift, 0) * 1px + var(--my, 0) * var(--depth, 0) * 1px),
+    0
+  );
+  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+/* The copy drifts up and fades as the course list slides over the hero. */
+.mg-hero-copy {
+  opacity: calc(1 - var(--p, 0) * 1.5);
+  transform: translate3d(0, calc(var(--p, 0) * -140px), 0) scale(calc(1 - var(--p, 0) * 0.06));
+  will-change: transform, opacity;
+}
+
+/* Giant track title: each letter rises in turn. */
+@keyframes mg-letter {
+  from { opacity: 0; transform: translate3d(0, 0.45em, 0) rotate(8deg); }
+  to { opacity: 1; transform: none; }
+}
+.mg-letter {
+  display: inline-block;
+  animation: mg-letter 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* The dashed trail draws itself in: a solid stroke in a mask uncovers the dashes. */
+@keyframes mg-draw {
+  from { stroke-dashoffset: 1; }
+  to { stroke-dashoffset: 0; }
+}
+.mg-draw {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: mg-draw 2.4s 0.3s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+}
+
+/* Expanding rings around the track badge. */
+@keyframes mg-ring {
+  from { opacity: 0.55; transform: scale(1); }
+  to { opacity: 0; transform: scale(1.9); }
+}
+.mg-ring {
+  animation: mg-ring 2.8s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+}
+
+/* "Role para ver os cursos" cue. */
+@keyframes mg-scroll-cue {
+  0% { opacity: 0; transform: translate3d(0, -4px, 0); }
+  40% { opacity: 1; }
+  100% { opacity: 0; transform: translate3d(0, 10px, 0); }
+}
+.mg-scroll-cue {
+  animation: mg-scroll-cue 1.8s ease-in-out infinite;
+}
+
+/* Course rows come in from the side of the trail they sit on. */
+@keyframes mg-fadeLeft {
+  from { opacity: 0; transform: translate3d(-56px, 0, 0); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes mg-fadeRight {
+  from { opacity: 0; transform: translate3d(56px, 0, 0); }
+  to { opacity: 1; transform: none; }
+}
+[data-animate="fadeLeft"].mg-animated,
+[data-animate="fadeRight"].mg-animated {
+  animation-duration: 0.9s;
+  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+}
+[data-animate="fadeLeft"].mg-animated { animation-name: mg-fadeLeft; }
+[data-animate="fadeRight"].mg-animated { animation-name: mg-fadeRight; }
+
+/* The course trail fills with the track color as the visitor walks down the list. */
+.mg-trail-fill {
+  transform: scaleY(var(--fill, 0));
+  transform-origin: top;
+  transition: transform 0.2s linear;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mg-layer,
+  .mg-hero-copy { transform: none; opacity: 1; }
+  .mg-letter,
+  .mg-ring,
+  .mg-scroll-cue { animation: none; }
+  .mg-draw { animation: none; stroke-dashoffset: 0; }
 }
 
 /* Blog article body (HTML from the CMS snapshot). */

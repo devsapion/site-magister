@@ -34,6 +34,22 @@ export function SectionHeading({
   );
 }
 
+/** Track badge: the platform's gradient circle with the track icon punched in white. */
+export function TrilhaBadge({ icon, gradient, className }: { icon: string; gradient: string; className?: string }) {
+  return (
+    <span
+      className={className}
+      style={{ backgroundImage: gradient }}
+      aria-hidden="true"
+    >
+      <span
+        className="block size-[56%] bg-white"
+        style={{ mask: `url(${icon}) center / contain no-repeat`, WebkitMask: `url(${icon}) center / contain no-repeat` }}
+      />
+    </span>
+  );
+}
+
 /** Four-point star from the brand (same shape as the logo sparkle). */
 export function SparkleIcon(props: SVGProps<SVGSVGElement>) {
   return (
@@ -81,7 +97,11 @@ export function ButtonArrow() {
   return <ArrowIcon className="size-[18px] transition-transform duration-300 group-hover:translate-x-1" />;
 }
 
-/** iPhone-style frame around an app screenshot (920×2000). `eager` for frames above the fold. */
+/**
+ * iPhone-style frame around an app screenshot (920×2000). `eager` for frames above the fold.
+ * `className` sizes and places the phone; the bezel lives on an inner layer because percentage
+ * padding follows the parent's width, so it stays thin however the phone is positioned.
+ */
 export function PhoneFrame({
   src,
   alt,
@@ -96,15 +116,12 @@ export function PhoneFrame({
   eager?: boolean;
 }) {
   return (
-    <div
-      className={cn(
-        "relative rounded-[18%/8.4%] bg-[linear-gradient(145deg,#3a3550,#121019_45%,#2a2638)] p-[3.2%] shadow-[0_40px_80px_-30px_rgba(40,10,110,0.55),0_18px_36px_-18px_rgba(0,0,0,0.45),inset_0_0_0_1.5px_rgba(255,255,255,0.12)]",
-        className,
-      )}
-    >
-      <div className="relative aspect-[920/2000] overflow-hidden rounded-[15%/7%] bg-white">
-        <Image src={src} alt={alt} fill sizes={sizes} loading={eager ? "eager" : undefined} className="object-cover" />
-        <span className="absolute top-[1.6%] left-1/2 h-[3.2%] w-[30%] -translate-x-1/2 rounded-full bg-black" />
+    <div className={cn("relative", className)}>
+      <div className="rounded-[18%/8.4%] bg-[linear-gradient(145deg,#3a3550,#121019_45%,#2a2638)] p-[3.2%] shadow-[0_40px_80px_-30px_rgba(40,10,110,0.55),0_18px_36px_-18px_rgba(0,0,0,0.45),inset_0_0_0_1.5px_rgba(255,255,255,0.12)]">
+        <div className="relative aspect-[920/2000] overflow-hidden rounded-[15%/7%] bg-white">
+          <Image src={src} alt={alt} fill sizes={sizes} loading={eager ? "eager" : undefined} className="object-cover" />
+          <span className="absolute top-[1.6%] left-1/2 h-[3.2%] w-[30%] -translate-x-1/2 rounded-full bg-black" />
+        </div>
       </div>
     </div>
   );
