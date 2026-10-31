@@ -1,20 +1,38 @@
-import { trilhas } from "../content";
+import { getCatalogTotals } from "@/lib/magister/courses";
+import { trilhas, type Trilha } from "../content";
 import { trilhaVisuals } from "./home-content";
-import { ArrowIcon, Mark, SectionHeading } from "./ui";
+import { ArrowIcon, Mark, SectionHeading, TrilhaBadge } from "./ui";
 
-/** Track badge: the platform's gradient circle with the track icon punched in white. */
-export function TrilhaBadge({ icon, gradient, className }: { icon: string; gradient: string; className?: string }) {
+/** Card linking to a track page (home track list and "Outras trilhas" on the track pages). */
+export function TrilhaCard({ trilha }: { trilha: Trilha }) {
+  const visual = trilhaVisuals[trilha.slug];
+  const totals = getCatalogTotals(trilha.slug);
+  const position = trilhas.indexOf(trilha) + 1;
   return (
-    <span
-      className={className}
-      style={{ backgroundImage: gradient }}
-      aria-hidden="true"
+    <a
+      href={trilha.href}
+      className="group relative flex h-full flex-col items-start rounded-[28px] border border-mg-line bg-white p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-transparent hover:shadow-[0_30px_60px_-30px_rgba(60,20,140,0.45)]"
     >
-      <span
-        className="block size-[56%] bg-white"
-        style={{ mask: `url(${icon}) center / contain no-repeat`, WebkitMask: `url(${icon}) center / contain no-repeat` }}
+      <TrilhaBadge
+        icon={visual.icon}
+        gradient={visual.gradient}
+        className="relative grid size-[88px] place-items-center rounded-full shadow-[0_14px_30px_-14px_rgba(0,0,0,0.45)] ring-[6px] ring-white transition-transform duration-500 group-hover:scale-105 group-hover:-rotate-6"
       />
-    </span>
+      <h3 className="mt-5 text-[22px] font-bold leading-tight" style={{ color: visual.color }}>
+        {position} – {trilha.title}
+      </h3>
+      <p className="mt-2 flex-1 text-[15px] leading-[1.55] text-mg-muted">{trilha.description}</p>
+      <span
+        className="mt-5 rounded-full px-3 py-1.5 text-[13px] font-semibold"
+        style={{ backgroundColor: visual.tint, color: visual.color }}
+      >
+        {totals.courses} cursos · {totals.modules} módulos
+      </span>
+      <span className="mt-5 inline-flex items-center gap-1.5 text-[15px] font-semibold text-mg-purple">
+        Conhecer cursos
+        <ArrowIcon className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
+      </span>
+    </a>
   );
 }
 
@@ -38,42 +56,16 @@ export function TrilhasSection() {
             aria-hidden="true"
           />
           <ul className="-mx-5 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-4 [scrollbar-width:none] desktop:mx-0 desktop:grid desktop:grid-cols-5 desktop:overflow-visible desktop:px-0 desktop:pb-0">
-            {trilhas.map((trilha, i) => {
-              const visual = trilhaVisuals[trilha.slug];
-              return (
-                <li
-                  key={trilha.slug}
-                  className="w-[78%] max-w-[300px] shrink-0 snap-center tablet:w-[280px] desktop:w-auto desktop:max-w-none"
-                  data-animate="fadeUp"
-                  data-delay={i * 100}
-                >
-                  <a
-                    href={trilha.href}
-                    className="group relative flex h-full flex-col items-start rounded-[28px] border border-mg-line bg-white p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-transparent hover:shadow-[0_30px_60px_-30px_rgba(60,20,140,0.45)]"
-                  >
-                    <TrilhaBadge
-                      icon={visual.icon}
-                      gradient={visual.gradient}
-                      className="relative grid size-[88px] place-items-center rounded-full shadow-[0_14px_30px_-14px_rgba(0,0,0,0.45)] ring-[6px] ring-white transition-transform duration-500 group-hover:scale-105 group-hover:-rotate-6"
-                    />
-                    <h3 className="mt-5 text-[22px] font-bold leading-tight" style={{ color: visual.color }}>
-                      {i + 1} – {trilha.title}
-                    </h3>
-                    <p className="mt-2 flex-1 text-[15px] leading-[1.55] text-mg-muted">{trilha.description}</p>
-                    <span
-                      className="mt-5 rounded-full px-3 py-1.5 text-[13px] font-semibold"
-                      style={{ backgroundColor: visual.tint, color: visual.color }}
-                    >
-                      {visual.stats}
-                    </span>
-                    <span className="mt-5 inline-flex items-center gap-1.5 text-[15px] font-semibold text-mg-purple">
-                      Conhecer cursos
-                      <ArrowIcon className="size-4 transition-transform duration-300 group-hover:translate-x-1" />
-                    </span>
-                  </a>
-                </li>
-              );
-            })}
+            {trilhas.map((trilha, i) => (
+              <li
+                key={trilha.slug}
+                className="w-[78%] max-w-[300px] shrink-0 snap-center tablet:w-[280px] desktop:w-auto desktop:max-w-none"
+                data-animate="fadeUp"
+                data-delay={i * 100}
+              >
+                <TrilhaCard trilha={trilha} />
+              </li>
+            ))}
           </ul>
         </div>
       </div>

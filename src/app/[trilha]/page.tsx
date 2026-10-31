@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getTrilha, trilhas } from "@/components/sites/magister/content";
-import { TrilhaPage } from "@/components/sites/magister/trilha-page";
+import { TrilhaPage } from "@/components/sites/magister/trilha/trilha-page";
 
 interface Props {
   params: Promise<{ trilha: string }>;

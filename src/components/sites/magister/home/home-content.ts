@@ -1,4 +1,4 @@
-import { links, testimonialRows, type TrilhaSlug } from "../content";
+import { links, testimonialRows, trilhas, type TrilhaSlug } from "../content";
 
 /** Assets of the redesigned home (app screenshots, mascot, consultants, new logo). */
 export const HOME = "/sites/magister/home";
@@ -26,7 +26,11 @@ export interface HeaderLink {
 }
 
 export const navItems: HeaderLink[] = [
-  { label: "Trilhas", href: links.trilhas },
+  {
+    label: "Trilhas",
+    href: links.trilhas,
+    children: trilhas.map((trilha) => ({ label: trilha.title, href: trilha.href, description: trilha.description })),
+  },
   { label: "Diferenciais", href: homeLinks.diferenciais },
   { label: "Resultados", href: homeLinks.resultados },
   { label: "Planos", href: homeLinks.planos },
@@ -67,12 +71,8 @@ export const magis = {
 
 export type MagisPose = keyof typeof magis;
 
-/** Platform numbers from the institutional catalog (appmagister.com.br/catalogo). */
+/** Platform numbers that are not counted from the course catalog (see `getCatalogTotals`). */
 export const platformNumbers = [
-  { value: "5", label: "trilhas de aprendizagem" },
-  { value: "31", label: "cursos no catálogo" },
-  { value: "156", label: "módulos" },
-  { value: "613", label: "videoaulas" },
   { value: "40", label: "consultores especialistas" },
   { value: "25", label: "ferramentas de IA no Labs" },
 ];
@@ -85,7 +85,10 @@ export interface TrilhaVisual {
   color: string;
   /** Soft background for the stats chip. */
   tint: string;
-  stats: string;
+  /** Text over the track gradient: white, or ink where white would not read (yellow). */
+  onGradient: "light" | "dark";
+  /** Magis pose on the track page. */
+  pose: MagisPose;
 }
 
 export const trilhaVisuals: Record<TrilhaSlug, TrilhaVisual> = {
@@ -94,35 +97,40 @@ export const trilhaVisuals: Record<TrilhaSlug, TrilhaVisual> = {
     gradient: "radial-gradient(85% 95% at 50% 42%, #ffa651 0%, #ff922b 55%, #e8590c 135%)",
     color: "#e8590c",
     tint: "#fff4e6",
-    stats: "4 cursos · 20 módulos",
+    onGradient: "light",
+    pose: "ideia",
   },
   "trilha-infancia": {
     icon: `${HOME}/trilhas/infancia.svg`,
     gradient: "radial-gradient(85% 95% at 50% 42%, #f7cc4b 0%, #f5c123 55%, #f08c00 135%)",
     color: "#c08d00",
     tint: "#fff9db",
-    stats: "5 cursos · 25 módulos",
+    onGradient: "dark",
+    pose: "piscando",
   },
   "trilha-skills": {
     icon: `${HOME}/trilhas/skills.svg`,
     gradient: "radial-gradient(85% 95% at 50% 42%, #48d3aa 0%, #20c997 55%, #099268 135%)",
     color: "#099268",
     tint: "#e6fcf5",
-    stats: "8 cursos · 41 módulos",
+    onGradient: "light",
+    pose: "meditando",
   },
   "trilha-inclusao": {
     icon: `${HOME}/trilhas/inclusao.svg`,
     gradient: "radial-gradient(85% 95% at 50% 42%, #58acf3 0%, #339af0 55%, #1971c2 135%)",
     color: "#1971c2",
     tint: "#e7f5ff",
-    stats: "9 cursos · 45 módulos",
+    onGradient: "light",
+    pose: "magia",
   },
   "trilha-gestao": {
     icon: `${HOME}/trilhas/gestao.svg`,
     gradient: "radial-gradient(85% 95% at 50% 42%, #b3b3b3 0%, #a1a1a1 55%, #737373 135%)",
     color: "#4d4d4d",
     tint: "#f1f3f5",
-    stats: "5 cursos · 25 módulos",
+    onGradient: "light",
+    pose: "oculos",
   },
 };
 

@@ -1,0 +1,1012 @@
+{
+  "source": "https://appmagister.com.br/catalogo",
+  "syncedAt": "2026-10-30",
+  "courses": [
+    {
+      "id": "chegou-a-educacao-5-0-e-agora",
+      "trilha": "trilha-inovacao",
+      "title": "Chegou a Educação 5.0. E agora?",
+      "description": "Aprenda a se adaptar às novas abordagens educacionais para transformar sua prática pedagógica e atender às demandas da Nova Educação ou Educação 5.0.",
+      "image": "/sites/magister/cursos/chegou-a-educacao-5-0-e-agora.webp",
+      "modules": [
+        "Educação 5.0 - do professor transmissor ao professor facilitador",
+        "Ensino Híbrido na prática",
+        "O que são metodologias ativas de aprendizagem?",
+        "Domine a sala de aula invertida (Flipped Classroom)",
+        "Como criar ambientes de aprendizagem significativos"
+      ],
+      "stats": {
+        "videos": 12,
+        "ebooks": 7,
+        "activities": 2,
+        "extras": 10
+      },
+      "consultants": [
+        "rosemari-probst",
+        "jose-motta",
+        "michelle-jordao"
+      ]
+    },
+    {
+      "id": "inovacao-para-professores-ia-gamificacao-e-outras-tecnologias",
+      "trilha": "trilha-inovacao",
+      "title": "Inovação para professores: IA, gamificação e outras tecnologias",
+      "description": "Explore I.A., gamificação, design thinking, cultura maker e robótica para transformar sua sala de aula em um ambiente dinâmico e de aprendizado envolvente.",
+      "image": "/sites/magister/cursos/inovacao-para-professores-ia-gamificacao-e-outras-tecnologias.webp",
+      "modules": [
+        "Como otimizar tempo e personalizar o aprendizado com o ChatGPT e Gemini",
+        "Como engajar e motivar os alunos através da Gamificação",
+        "Design Thinking: ensine seus alunos a pensarem",
+        "Cultura maker: como transformar a sala de aula em laboratório",
+        "Robótica e prototipagem na educação"
+      ],
+      "stats": {
+        "videos": 20,
+        "ebooks": 5,
+        "activities": 5,
+        "extras": 10
+      },
+      "consultants": [
+        "fabio-bigati",
+        "marco-antonio-sulenta",
+        "gesselia",
+        "michelle-jordao"
+      ]
+    },
+    {
+      "id": "introducao-a-inovacao-digital-para-professores",
+      "trilha": "trilha-inovacao",
+      "title": "Introdução à inovação digital para professores",
+      "description": "Domine a tecnologia e a inovação para criar aulas mais envolventes e eficazes, utilizando ferramentas e estratégias digitais para fortalecer o aprendizado.",
+      "image": "/sites/magister/cursos/introducao-a-inovacao-digital-para-professores.webp",
+      "modules": [
+        "Ferramentas essenciais para professores",
+        "Domine plataformas e ferramentas digitais",
+        "Como integrar a educação midiática e a cidadania digital",
+        "Como criar materiais didáticos inovadores",
+        "Marketing para professores"
+      ],
+      "stats": {
+        "videos": 20,
+        "ebooks": 5,
+        "activities": 5,
+        "extras": 10
+      },
+      "consultants": [
+        "marco-antonio-sulenta",
+        "henrique-folster"
+      ]
+    },
+    {
+      "id": "bncc-da-computacao-sem-misterios-da-politica-a-pratica-na-sala-de-aula",
+      "trilha": "trilha-inovacao",
+      "title": "BNCC da Computação Sem Mistérios: da política à prática na sala de aula",
+      "description": "Capacite-se para compreender e implementar, de forma crítica e prática, as diretrizes da Base Nacional Comum Curricular (BNCC) da Computação. Uma formação para professores, coordenadores pedagógicos e gestores escolares.",
+      "image": "/sites/magister/cursos/bncc-da-computacao-sem-misterios-da-politica-a-pratica-na-sala-de-aula.webp",
+      "modules": [
+        "Decodificando a Nova BNCC",
+        "Pensamento Computacional para Todos (Inclusive para Humanas!)",
+        "Planejando a Cultura Digital na Escola",
+        "Tecnologia, IA e Sociedade",
+        "Criando seu Plano de Implementação"
+      ],
+      "stats": {
+        "videos": 20,
+        "ebooks": 5,
+        "activities": 5,
+        "extras": 10
+      },
+      "consultants": [
+        "professor-ph"
+      ]
+    },
+    {
+      "id": "transforme-a-bncc-da-computacao-em-aulas-ativas-com-prof-motta",
+      "trilha": "trilha-inovacao",
+      "title": "Transforme a BNCC da Computação em aulas ativas com Prof. Motta",
+      "description": "Uma formação prática e estratégica para preparar professores e gestores para implementar a BNCC da Computação no contexto escolar.",
+      "image": "/sites/magister/cursos/transforme-a-bncc-da-computacao-em-aulas-ativas-com-prof-motta.webp",
+      "modules": [
+        "O professor como agente de transformação digital na escola",
+        "Metodologias ativas para ensinar computação",
+        "Da bncc à sala de aula: planejando experiências de aprendizagem",
+        "Computação e criatividade para todos",
+        "Construindo uma cultura de inovação com a bncc da computação"
+      ],
+      "stats": {
+        "videos": 20,
+        "ebooks": 5,
+        "activities": 5,
+        "extras": 10
+      },
+      "consultants": [
+        "jose-motta"
+      ]
+    },
+    {
+      "id": "particularidades-da-educacao-infantil",
+      "trilha": "trilha-infancia",
+      "title": "Particularidades da Educação Infantil",
+      "description": "Desenvolva práticas pedagógicas eficazes, valorizando a criança, o brincar e a autonomia, enquanto transforma tempos e espaços de aprendizado.",
+      "image": "/sites/magister/cursos/particularidades-da-educacao-infantil.webp",
+      "modules": [
+        "Criança ou aluno? Construindo um conceito de infância",
+        "Tempos e espaços na Educação Infantil",
+        "A infância, a imaginação e o brincar",
+        "Desenvolvimento e autonomia na Educação Infantil",
+        "A criança como capaz e a potência da Educação Infantil"
+      ],
+      "stats": {
+        "videos": 10,
+        "ebooks": 10,
+        "activities": 5,
+        "extras": 10
+      },
+      "consultants": [
+        "israel-boniek"
+      ]
+    },
+    {
+      "id": "metodos-eficazes-de-alfabetizacao-para-a-educacao-infantil",
+      "trilha": "trilha-infancia",
+      "title": "Métodos eficazes de alfabetização para a educação infantil",
+      "description": "Aprenda métodos eficazes de alfabetização para a educação infantil, utilizando interatividade, brincadeiras e práticas leitoras.",
+      "image": "/sites/magister/cursos/metodos-eficazes-de-alfabetizacao-para-a-educacao-infantil.webp",
+      "modules": [
+        "Interatividade e brincadeiras na educação infantil",
+        "Como organizar experiências interativas",
+        "Aquisição da linguagem oral e escrita",
+        "Estratégias de leitura na educação infantil",
+        "Como usar práticas leitoras na educação infantil"
+      ],
+      "stats": {
+        "videos": 20,
+        "ebooks": 5,
+        "activities": 5,
+        "extras": 10
+      },
+      "consultants": [
+        "vanessa-martins"
+      ]
+    },
+    {
+      "id": "aprenda-a-alfabetizar-alunos-de-1-e-2-anos",
+      "trilha": "trilha-infancia",
+      "title": "Aprenda a alfabetizar alunos de 1° e 2° anos",
+      "description": "Aprenda a alfabetizar alunos do 1º e 2º anos por meio do ambiente, da sondagem diagnóstica e consciência fonológica para a escrita alfabética.",
+      "image": "/sites/magister/cursos/aprenda-a-alfabetizar-alunos-de-1-e-2-anos.webp",
+      "modules": [
+        "Direito à alfabetização e letramento: compreender para atuar",
+        "Como criar um ambiente alfabetizador",
+        "Como desenvolver competências e habilidades na alfabetização",
+        "Sondagens diagnósticas e os níveis de escrita na prática",
+        "Consciência fonológica para a escrita alfabética: prática"
+      ],
+      "stats": {
+        "videos": 20,
+        "ebooks": 4,
+        "activities": 5,
+        "extras": 10
+      },
+      "consultants": [
+        "vanessa-martins"
+      ]
+    },
+    {
+      "id": "recomposicao-de-aprendizagens-e-alfabetizacao-para-o-3o-ano",
+      "trilha": "trilha-infancia",
+      "title": "Recomposição de aprendizagens e alfabetização para o 3º ano",
+      "description": "Aprenda a alfabetizar alunos do 3º ano por meio da recomposição das aprendizagens, consciência fonológica, sondagem diagnóstica e utilização da leitura.",
+      "image": "/sites/magister/cursos/recomposicao-de-aprendizagens-e-alfabetizacao-para-o-3o-ano.webp",
+      "modules": [
+        "Garantindo o direito de aprender",
+        "Práticas pedagógicas de leitura",
+        "Desenvolvendo a Consciência Fonológica",
+        "Sondagens diagnósticas e os níveis de escrita na prática",
+        "Uso da literatura na formação do leitor"
+      ],
+      "stats": {
+        "videos": 20,
+        "ebooks": 5,
+        "activities": 5,
+        "extras": 10
+      },
+      "consultants": [
+        "vanessa-martins"
+      ]
+    },
+    {
+      "id": "letramento-fluencia-e-compreensao-leitora-para-4o-e-5o-anos",
+      "trilha": "trilha-infancia",
+      "title": "Letramento, fluência e compreensão leitora para 4º e 5º anos",
+      "description": "Aprenda métodos avançados de alfabetização para alunos do 4º e 5º anos e explore estratégias para realizar análise textual, desenvolver compreensão de textos e formar leitores fluentes.",
+      "image": "/sites/magister/cursos/letramento-fluencia-e-compreensao-leitora-para-4o-e-5o-anos.webp",
+      "modules": [
+        "Como intervir para recompor aprendizagens",
+        "Práticas pedagógicas de leitura",
+        "Desenvolvendo a Consciência Fonológica",
+        "Sondagens diagnósticas e os níveis de escrita na prática",
+        "Uso da literatura na formação do leitor"
+      ],
+      "stats": {
+        "videos": 20,
+        "ebooks": 6,
+        "activities": 5,
+        "extras": 9
+      },
+      "consultants": [
+        "vanessa-martins"
+      ]
+    },
+    {
+      "id": "skills-essenciais-para-o-professor-5-0",
+      "trilha": "trilha-skills",
+      "title": "Skills essenciais para o Professor 5.0",
+      "description": "Domine as Skills essenciais e torne-se um Professor 5.0 capaz de cuidar da saúde mental e voz, organizar-se financeiramente e manter prática de leitura.",
+      "image": "/sites/magister/cursos/skills-essenciais-para-o-professor-5-0.webp",
+      "modules": [
+        "O efeito da felicidade como estilo de vida",
+        "Oratória e cuidados com a voz",
+        "Leitura: como ler mais e melhor",
+        "Saúde mental para além das terapias",
+        "Educação 5.0 - do professor transmissor ao professor facilitador",
+        "Organização financeira descomplicada"
+      ],
+      "stats": {
+        "videos": 24,
+        "ebooks": 8,
+        "activities": 6,
+        "extras": 10
+      },
+      "consultants": [
+        "gustavo-arns",
+        "mariana-guidolini",
+        "ronis-faria",
+        "eliana-comerio",
+        "rosemari-probst",
+        "heraldo"
+      ]
+    },
+    {
+      "id": "tecnicas-de-autogestao-storytelling",
+      "trilha": "trilha-skills",
+      "title": "Técnicas de autogestão, storytelling",
+      "description": "Domine as skills necessárias para engajar os alunos com o uso do storytelling e outros métodos, bem como avaliar e recuperar aprendizagens de modo eficaz.",
+      "image": "/sites/magister/cursos/tecnicas-de-autogestao-storytelling.webp",
+      "modules": [
+        "Aprenda a gerenciar sua própria formação continuada",
+        "Aprenda a arte do storytelling",
+        "Adolescências e saúde mental do professor: estratégias de manejo",
+        "Avaliação para a recuperação de aprendizagens",
+        "Métodos de engajamento em sala de aula"
+      ],
+      "stats": {
+        "videos": 20,
+        "ebooks": 5,
+        "activities": 5,
+        "extras": 10
+      },
+      "consultants": [
+        "jordana-neri",
+        "mariana-guidolini",
+        "eduardo-miranda",
+        "geraldo-pecanha",
+        "camila-reis"
+      ]
+    },
+    {
+      "id": "atividades-acessiveis-como-elaborar-e-avaliar",
+      "trilha": "trilha-skills",
+      "title": "Atividades acessíveis: como elaborar e avaliar",
+      "description": "Domine estratégias avançadas para personalização: avaliação diagnóstica, STEAM integrado à BNCC, engajamento, acessibilização e avaliação de atividades.",
+      "image": "/sites/magister/cursos/atividades-acessiveis-como-elaborar-e-avaliar.webp",
+      "modules": [
+        "Métodos de avaliação diagnóstica e formativa",
+        "Educação em multiníveis e o desenho universal para a aprendizagem (DUA)",
+        "Como integrar o STEAM com a BNCC",
+        "Elaboração de atividades acessíveis",
+        "Métodos de avaliação de atividades acessíveis"
+      ],
+      "stats": {
+        "videos": 20,
+        "ebooks": 5,
+        "activities": 5,
+        "extras": 10
+      },
+      "consultants": [
+        "michelle-jordao",
+        "geraldo-pecanha",
+        "camila-reis"
+      ]
+    },
+    {
+      "id": "transforme-a-educacao-com-estrategias-da-neurociencia-aplicada",
+      "trilha": "trilha-skills",
+      "title": "Transforme a educação com estratégias da neurociência aplicada",
+      "description": "Transforme a Educação com Estratégias da Neurociência Aplicada é uma jornada formativa inovadora voltada a educadores que desejam compreender profundamente como o cérebro se desenvolve da infância à adolescência, e como utilizar esse conhecimento para transformar suas práticas pedagógicas.",
+      "image": "/sites/magister/cursos/transforme-a-educacao-com-estrategias-da-neurociencia-aplicada.webp",
+      "modules": [
+        "O Começo da Jornada: da fecundação aos 2 anos",
+        "O Cérebro em Movimento: dos 3 aos 6 anos",
+        "A Travessia para o Pensamento Operatório: dos 7 aos 10 anos",
+        "Pré-adolescência: entre o concreto e o abstrato (11 a 13 anos)",
+        "Adolescência: do caos à potência (14 a 18 anos)"
+      ],
+      "stats": {
+        "videos": 20,
+        "ebooks": 5,
+        "activities": 5,
+        "extras": 10
+      },
+      "consultants": [
+        "william-borghetti"
+      ]
+    },
+    {
+      "id": "leitura-critica-na-era-digital-estrategias-para-interpretar-textos-multimodais",
+      "trilha": "trilha-skills",
+      "title": "Leitura crítica na era digital: Estratégias para interpretar textos multimodais",
+      "description": "Desenvolva com seus alunos habilidades de interpretação e análise de textos multimodais — como imagens, vídeos, infográficos, memes e posts em redes sociais — com base em uma perspectiva crítica e reflexiva.",
+      "image": "/sites/magister/cursos/leitura-critica-na-era-digital-estrategias-para-interpretar-textos-multimodais.webp",
+      "modules": [
+        "Fundamentos da Leitura Crítica na Era Digital",
+        "Desvendando Textos Multimodais Estáticos (Imagens, Posts, Infográficos)",
+        "Interpretando Narrativas em Textos Multimodais Dinâmicos (Vídeos e Animações)",
+        "Estratégias Pedagógicas: Da Teoria à Sala de Aula",
+        "Avaliação da Leitura Crítica e Conexões com a BNCC"
+      ],
+      "stats": {
+        "videos": 20,
+        "ebooks": 5,
+        "activities": 5,
+        "extras": 10
+      },
+      "consultants": [
+        "cristiane-roveda"
+      ]
+    },
+    {
+      "id": "potencialize-a-aprendizagem-em-matematica-nos-anos-finais-do-ensino-fundamental",
+      "trilha": "trilha-skills",
+      "title": "Potencialize a aprendizagem em Matemática nos Anos Finais do Ensino Fundamental",
+      "description": "O curso \"Potencialize a Aprendizagem em Matemática nos Anos Finais do Ensino Fundamental\", constitui uma jornada de ressignificação pedagógica que integra teoria e prática para transformar a matemática em uma ferramenta de leitura crítica do mundo.",
+      "image": "/sites/magister/cursos/potencialize-a-aprendizagem-em-matematica-nos-anos-finais-do-ensino-fundamental.webp",
+      "modules": [
+        "Matemática em sua essência: fundamentos do ensinar e do aprender",
+        "Matemática concreta e funcional: números, operações, grandezas e medidas",
+        "Padrões, formas e incertezas: geometria, álgebra, probabilidade e estatística",
+        "Resolução de problemas: estratégias e possibilidades",
+        "Avaliações externas: ler, interpretar e decidir"
+      ],
+      "stats": {
+        "videos": 20,
+        "ebooks": 5,
+        "activities": 5,
+        "extras": 10
+      },
+      "consultants": [
+        "analice-torezani"
+      ]
+    },
+    {
+      "id": "movimente-a-escola-para-um-futuro-mais-verde-e-sustentavel",
+      "trilha": "trilha-skills",
+      "title": "Movimente a Escola para um futuro mais verde e sustentável",
+      "description": "A Educação Ambiental deixou de ser um tema restrito às datas comemorativas para assumir um papel estratégico na formação de cidadãos comprometidos com a sustentabilidade, a justiça socioambiental e a transformação da realidade.",
+      "image": "/sites/magister/cursos/movimente-a-escola-para-um-futuro-mais-verde-e-sustentavel.webp",
+      "modules": [
+        "Fundamentos da Educação Ambiental Escolar",
+        "Como Elaborar Projetos de Educação Ambiental: Passo a Passo",
+        "Educação Ambiental e Território: Como Escolher Temas Conectados à Realidade Local",
+        "Educação Ambiental, Infância e Consumo Consciente",
+        "Educação Ambiental e Tecnologia"
+      ],
+      "stats": {
+        "videos": 20,
+        "ebooks": 5,
+        "activities": 5,
+        "extras": 10
+      },
+      "consultants": [
+        "leticia-frechiani",
+        "ana-carolina-ceron-oliveira-monico"
+      ]
+    },
+    {
+      "id": "de-vida-aos-projetos-escolares-com-experiencias-autorais-e-significativas",
+      "trilha": "trilha-skills",
+      "title": "Dê vida aos projetos escolares com experiências autorais e significativas",
+      "description": "O curso trata de como planejar e conduzir projetos pedagógicos na escola. Começa pelo ponto de partida, que é a pergunta capaz de mobilizar a turma, e mostra como um interesse dos alunos vira percurso de investigação.",
+      "image": "/sites/magister/cursos/de-vida-aos-projetos-escolares-com-experiencias-autorais-e-significativas.webp",
+      "modules": [
+        "Projetos nascem de perguntas, não de planilhas",
+        "Leitura, escrita e afeto: o coração dos projetos literários",
+        "Tecnologia com propósito: criação, autoria e educação digital",
+        "Do papel à experiência: como estruturar um bom projeto",
+        "O projeto não termina na culminância"
+      ],
+      "stats": {
+        "videos": 20,
+        "ebooks": 5,
+        "activities": 5,
+        "extras": 10
+      },
+      "consultants": [
+        "helder-guastti"
+      ]
+    },
+    {
+      "id": "pedagogia-da-alternancia",
+      "trilha": "trilha-inclusao",
+      "title": "Pedagogia da Alternância",
+      "description": "Aprenda a aplicar a Pedagogia da Alternância, com foco na educação do campo, planejamento integrado e ferramentas para salas multisseriadas.",
+      "image": "/sites/magister/cursos/pedagogia-da-alternancia.webp",
+      "modules": [
+        "Mediações, legislação e marco histórico da Pedagogia da Alternância",
+        "Instrumentos pedagógicos da Pedagogia da Alternância",
+        "Modalidade Educação do Campo",
+        "O planejamento pedagógico e a integração entre as áreas do conhecimento",
+        "Contexto de aprendizagem nas escolas com salas multisseriadas"
+      ],
+      "stats": {
+        "videos": 20,
+        "ebooks": 5,
+        "activities": 5,
+        "extras": 10
+      },
+      "consultants": [
+        "roberto-telau",
+        "felipe-junior-mauricio-pomuchenq",
+        "ana-carla-loss-furlan-gerke"
+      ]
+    },
+    {
+      "id": "aba-na-escola-fundamentos-e-aplicacao",
+      "trilha": "trilha-inclusao",
+      "title": "ABA na Escola: fundamentos e aplicação",
+      "description": "Aprenda a aplicar a ciência ABA para gerenciar comportamentos, ensinar habilidades sociais e de comunicação, bem como aprender a elaborar e a fazer uso do PEI.",
+      "image": "/sites/magister/cursos/aba-na-escola-fundamentos-e-aplicacao.webp",
+      "modules": [
+        "Análise Aplicada do Comportamento",
+        "Comportamento Verbal e Simbólico, Comunicação Alternativa e Alfabetização",
+        "Instrumentos de Avaliação e Gestão de Comportamentos",
+        "Habilidades Sociais e Intervenções Educacionais Diante de Comportamentos",
+        "Elaboração do Plano de Ensino Individualizado (PEI)"
+      ],
+      "stats": {
+        "videos": 20,
+        "ebooks": 5,
+        "activities": 5,
+        "extras": 10
+      },
+      "consultants": [
+        "flavia-regiane-correia-da-silva",
+        "wilson-bomfim-barbosa-junior",
+        "ana-gabriela-rauta-siller",
+        "luiz-filipe-souza-dias"
+      ]
+    },
+    {
+      "id": "manejo-dos-comportamentos-desafiadores-no-tea",
+      "trilha": "trilha-inclusao",
+      "title": "Manejo dos comportamentos desafiadores no TEA",
+      "description": "Aprenda estratégias para manejar comportamentos desafiadores no TEA, a ensinar habilidades de comunicação e a oferecer suporte especializado através do AEE.",
+      "image": "/sites/magister/cursos/manejo-dos-comportamentos-desafiadores-no-tea.webp",
+      "modules": [
+        "TEA e os comportamentos desafiadores",
+        "Ensino de habilidades de comunicação no TEA",
+        "Análise funcional dos comportamentos: passo a passo",
+        "Níveis 2 e 3 de suporte: estratégias de manejo",
+        "AEE para TEA: Adaptação e Suporte"
+      ],
+      "stats": {
+        "videos": 20,
+        "ebooks": 6,
+        "activities": 5,
+        "extras": 9
+      },
+      "consultants": [
+        "flavia-regiane-correia-da-silva",
+        "dirlan-bravo",
+        "rita-maria-vissi"
+      ]
+    },
+    {
+      "id": "estrategias-de-ensino-para-alunos-com-tdah",
+      "trilha": "trilha-inclusao",
+      "title": "Estratégias de ensino para alunos com TDAH",
+      "description": "Aprenda sobre o TDAH, adaptações curriculares, rede de apoio, técnicas para melhorar atenção e concentração e manejo da impulsividade e hiperatividade.",
+      "image": "/sites/magister/cursos/estrategias-de-ensino-para-alunos-com-tdah.webp",
+      "modules": [
+        "Características do TDAH",
+        "Adaptação curricular e organização do ambiente no TDAH",
+        "Estratégias para melhorar a atenção e concentração no TDAH",
+        "Estratégias para lidar com a impulsividade e hiperatividade no TDAH",
+        "Rede de apoio para o TDAH: como construir"
+      ],
+      "stats": {
+        "videos": 20,
+        "ebooks": 5,
+        "activities": 5,
+        "extras": 10
+      },
+      "consultants": [
+        "maira-satiro",
+        "carline-borges",
+        "flavia-regiane-correia-da-silva"
+      ]
+    },
+    {
+      "id": "intervencao-e-manejo-do-tod",
+      "trilha": "trilha-inclusao",
+      "title": "Intervenção e manejo do TOD",
+      "description": "Curso prático sobre intervenção e manejo do TOD: conceitos, estratégias de ensino, adaptações curriculares, uso do PEI, construção e fortalecimento de rede de apoio.",
+      "image": "/sites/magister/cursos/intervencao-e-manejo-do-tod.webp",
+      "modules": [
+        "Características do TOD",
+        "Adaptação curricular e estratégias de engajamento no TOD",
+        "Estratégias para lidar com a oposição e desafio no TOD",
+        "Uso do PEI como estratégia de personalização",
+        "Rede de apoio para o TOD: como construir"
+      ],
+      "stats": {
+        "videos": 20,
+        "ebooks": 5,
+        "activities": 5,
+        "extras": 10
+      },
+      "consultants": [
+        "flavia-regiane-correia-da-silva",
+        "dirlan-bravo",
+        "carline-borges"
+      ]
+    },
+    {
+      "id": "educacao-para-as-relacoes-etnico-raciais",
+      "trilha": "trilha-inclusao",
+      "title": "Educação para as relações étnico-raciais",
+      "description": "Este curso oferece uma abordagem abrangente sobre educação nas relações étnico-raciais: conceitos de racismo, marcos legais, promoção da diversidade e pedagogia antirracista em ambientes educacionais.",
+      "image": "/sites/magister/cursos/educacao-para-as-relacoes-etnico-raciais.webp",
+      "modules": [
+        "Racismo: termos e conceitos",
+        "Marcos legais para o enfrentamento do racismo",
+        "Como construir uma pedagogia antirracista",
+        "Planejamento de aula antirracista"
+      ],
+      "stats": {
+        "videos": 16,
+        "ebooks": 4,
+        "activities": 4,
+        "extras": 8
+      },
+      "consultants": [
+        "noelia-da-silva",
+        "geisa-hupp-lacerda",
+        "vanessa-martins"
+      ]
+    },
+    {
+      "id": "acolha-ensine-e-transforme-caminhos-de-aprendizagem-no-transtorno-do-espectro-autista",
+      "trilha": "trilha-inclusao",
+      "title": "Acolha, ensine e transforme caminhos de aprendizagem no transtorno do espectro autista",
+      "description": "Desenvolvido para apoiar educadores, gestores e profissionais da educação na construção de práticas pedagógicas inclusivas, sensíveis e efetivas para estudantes com TEA.",
+      "image": "/sites/magister/cursos/acolha-ensine-e-transforme-caminhos-de-aprendizagem-no-transtorno-do-espectro-autista.webp",
+      "modules": [
+        "TEA e os desafios da aprendizagem e das relações psicosociais na primeira infância",
+        "Caminhos para a alfabetização do aluno com TEA",
+        "Caminhos para utilizar o HIPERFOCO do aluno no TEA como oportunidades de aprendizado.",
+        "Cérebros diferentes não aprendem de forma igual: cada autista é único",
+        "Resultado que Vale: como as avaliações influenciam os recursos da educação"
+      ],
+      "stats": {
+        "videos": 21,
+        "ebooks": 5,
+        "activities": 5,
+        "extras": 10
+      },
+      "consultants": [
+        "delma-do-carmo-ker"
+      ]
+    },
+    {
+      "id": "construindo-a-escola-antirracista-com-o-pneerq",
+      "trilha": "trilha-inclusao",
+      "title": "Construindo a Escola Antirracista com o PNEERQ",
+      "description": "Fortaleça a formação de professores, gestores e profissionais da educação para a construção de práticas pedagógicas comprometidas com a equidade racial, a justiça cognitiva e a valorização das epistemologias negras e quilombolas.",
+      "image": "/sites/magister/cursos/construindo-a-escola-antirracista-com-o-pneerq.webp",
+      "modules": [
+        "Diversidade que forma: panorama étnico-racial e quilombola no Brasil",
+        "Territórios que ensinam: culturas, saberes e pertencimento",
+        "Promovendo Práticas Antirracistas na Escola",
+        "Gestão escolar comprometida com diversidade e equidade racial",
+        "Ler para Libertar: literatura antirracista como ato pedagógico"
+      ],
+      "stats": {
+        "videos": 20,
+        "ebooks": 5,
+        "activities": 5,
+        "extras": 10
+      },
+      "consultants": [
+        "geisa-hupp-lacerda",
+        "rayner-raulino"
+      ]
+    },
+    {
+      "id": "aprenda-com-thiago-gusmao-tudo-sobre-a-inclusao-do-estudante-com-tea",
+      "trilha": "trilha-inclusao",
+      "title": "Aprenda com Thiago Gusmão: Tudo sobre a Inclusão do Estudante com TEA",
+      "description": "Todo professor já se viu diante de um estudante com TEA sem saber por onde começar. Este curso responde a isso com base científica e linguagem acessível: você vai compreender os fundamentos do neurodesenvolvimento, os níveis de suporte e como o cérebro autista processa informação.",
+      "image": "/sites/magister/cursos/aprenda-com-thiago-gusmao-tudo-sobre-a-inclusao-do-estudante-com-tea.webp",
+      "modules": [
+        "Fundamentos do autismo e do neurodesenvolvimento",
+        "Níveis de suporte e necessidades educacionais no TEA",
+        "Organização do cérebro e aprendizagem",
+        "Comorbidades neuropsiquiátricas no TEA",
+        "Comportamentos desafiadores no ambiente escolar",
+        "Intervenção não medicamentosa e medicamentosa, quando pensar?"
+      ],
+      "stats": {
+        "videos": 30,
+        "ebooks": 6,
+        "activities": 6,
+        "extras": 6
+      },
+      "consultants": [
+        "thiago-gusmao"
+      ]
+    },
+    {
+      "id": "avaliacoes-externas-na-pratica",
+      "trilha": "trilha-gestao",
+      "title": "Avaliações externas na prática",
+      "description": "Aprenda análise de dados de avaliações externas, práticas avaliativas, integração com currículo, e estratégias de melhoria em Português e Matemática.",
+      "image": "/sites/magister/cursos/avaliacoes-externas-na-pratica.webp",
+      "modules": [
+        "Práticas Avaliativas",
+        "Avaliações externas e currículo",
+        "Análise de avaliações externas",
+        "Como melhorar o ensino da Língua Portuguesa",
+        "Como melhorar o ensino da Matemática"
+      ],
+      "stats": {
+        "videos": 20,
+        "ebooks": 5,
+        "activities": 5,
+        "extras": 10
+      },
+      "consultants": [
+        "marta-alves-da-cruz"
+      ]
+    },
+    {
+      "id": "projetos-interdisciplinares-para-enfrentar-violencia-bullying-e-o-racismo-nas-escolas",
+      "trilha": "trilha-gestao",
+      "title": "Projetos interdisciplinares para enfrentar violência, bullying e o racismo nas escolas",
+      "description": "Aprenda a usar projetos interdisciplinares para enfrentar o racismo, violência e bullying e para promover o protagonismo estudantil.",
+      "image": "/sites/magister/cursos/projetos-interdisciplinares-para-enfrentar-violencia-bullying-e-o-racismo-nas-escolas.webp",
+      "modules": [
+        "Como o uso de dados pode transformar o IDEB da sua rede",
+        "Como planejar projetos interdisciplinares",
+        "Como elaborar projetos interdisciplinares antirracistas",
+        "Neurociência e protagonismo estudantil",
+        "Bullying, violência e os impactos no ensino aprendizado"
+      ],
+      "stats": {
+        "videos": 20,
+        "ebooks": 5,
+        "activities": 5,
+        "extras": 10
+      },
+      "consultants": [
+        "rosemari-probst",
+        "camila-reis",
+        "noelia-da-silva",
+        "geisa-hupp-lacerda"
+      ]
+    },
+    {
+      "id": "gestao-escolar-inovadora-e-humanizada",
+      "trilha": "trilha-gestao",
+      "title": "Gestão escolar inovadora e humanizada",
+      "description": "Aprenda sobre os princípios básicos da gestão escolar, como construir ambiente humanizado e domine técnicas de gestão ágil para transformar seus resultados.",
+      "image": "/sites/magister/cursos/gestao-escolar-inovadora-e-humanizada.webp",
+      "modules": [
+        "Fundamentos da gestão escolar",
+        "Os 4 pilares da educação",
+        "Práticas para uma gestão transformadora",
+        "Gestão escolar e ambiente humanizado: passo a passo",
+        "Gestão ágil para educadores e gestores"
+      ],
+      "stats": {
+        "videos": 20,
+        "ebooks": 5,
+        "activities": 5,
+        "extras": 10
+      },
+      "consultants": [
+        "adriana-sperandio",
+        "gisele-de-nadai",
+        "henrique-folster"
+      ]
+    },
+    {
+      "id": "gestao-educacional-com-foco-nos-resultados",
+      "trilha": "trilha-gestao",
+      "title": "Gestão Educacional com foco nos resultados",
+      "description": "Aprenda a implementar um modelo de gestão educacional de alta performance com Douglas Farias, Secretário de Educação de Coreaú (CE), município com resultados de excelência reconhecidos nacionalmente no IDEB.",
+      "image": "/sites/magister/cursos/gestao-educacional-com-foco-nos-resultados.webp",
+      "modules": [
+        "Educação como prioridade: o compromisso da gestão pública",
+        "Organização Curricular e Gestão do Ensino",
+        "Gestão pedagógica eficiente: planejar, monitorar e alcançar resultados",
+        "Avaliação para aprendizagem: monitoramento, metas e intervenção",
+        "Liderança educacional: desenvolvendo gestores como agentes de transformação"
+      ],
+      "stats": {
+        "videos": 20,
+        "ebooks": 5,
+        "activities": 5,
+        "extras": 10
+      },
+      "consultants": [
+        "douglas-farias"
+      ]
+    },
+    {
+      "id": "gestao-educacional-estrategica-dados-financiamento-e-avaliacoes",
+      "trilha": "trilha-gestao",
+      "title": "Gestão Educacional Estratégica: Dados, Financiamento e Avaliações",
+      "description": "Qualifique gestores, técnicos educacionais e demais profissionais da educação para uma gestão estratégica, com foco no uso qualificado dos dados, no domínio dos mecanismos de financiamento da educação e na compreensão das avaliações externas.",
+      "image": "/sites/magister/cursos/gestao-educacional-estrategica-dados-financiamento-e-avaliacoes.webp",
+      "modules": [
+        "Cultura de Dados e Tomada de Decisão na Educação Pública",
+        "Qualidade da Informação e Formação para a Coleta e Uso de Dados",
+        "Financiamento da Educação: Leis, Fontes e Fundeb",
+        "Fundeb em Ação: Complementações, Condicionantes e Estratégias para Avançar",
+        "Resultado que Vale: como as avaliações influenciam os recursos da educação"
+      ],
+      "stats": {
+        "videos": 20,
+        "ebooks": 5,
+        "activities": 5,
+        "extras": 10
+      },
+      "consultants": [
+        "debora-resende-maranhao"
+      ]
+    }
+  ],
+  "consultants": {
+    "adriana-sperandio": {
+      "name": "Adriana Sperandio",
+      "title": "Mestre em Educação",
+      "photo": "/sites/magister/cursos/consultores/adriana-sperandio.webp"
+    },
+    "ana-carla-loss-furlan-gerke": {
+      "name": "Ana Carla Loss Furlan Gerke",
+      "title": "Mestra em Ensino de Humanidades",
+      "photo": "/sites/magister/cursos/consultores/ana-carla-loss-furlan-gerke.webp"
+    },
+    "ana-carolina-ceron-oliveira-monico": {
+      "name": "Ana Carolina Ceron Oliveira Mônico",
+      "title": "Engenheira Florestal",
+      "photo": "/sites/magister/cursos/consultores/ana-carolina-ceron-oliveira-monico.webp"
+    },
+    "ana-gabriela-rauta-siller": {
+      "name": "Ana Gabriela Rauta Siller",
+      "title": "Psicóloga",
+      "photo": "/sites/magister/cursos/consultores/ana-gabriela-rauta-siller.webp"
+    },
+    "analice-torezani": {
+      "name": "Analice Torezani",
+      "title": "Mestre em Matemática (UFES)",
+      "photo": "/sites/magister/cursos/consultores/analice-torezani.webp"
+    },
+    "camila-reis": {
+      "name": "Camila Reis",
+      "title": "Doutora em Biologia Vegetal",
+      "photo": "/sites/magister/cursos/consultores/camila-reis.webp"
+    },
+    "carline-borges": {
+      "name": "Carline Borges",
+      "title": "Doutora em Educação",
+      "photo": "/sites/magister/cursos/consultores/carline-borges.webp"
+    },
+    "cristiane-roveda": {
+      "name": "Cristiane Roveda",
+      "title": "Mestre em Literatura Brasileira pela UFSC.",
+      "photo": "/sites/magister/cursos/consultores/cristiane-roveda.webp"
+    },
+    "debora-resende-maranhao": {
+      "name": "Débora Resende Maranhão",
+      "title": "Especialista em Estatísticas Educacionais e Gestão Educacional. Gerenciou o Censo Escolar no Espírito Santo por 6 anos. Conselheira Municipal de Educação. Experiência em monitoramento de políticas públicas.",
+      "photo": "/sites/magister/cursos/consultores/debora-resende-maranhao.webp"
+    },
+    "delma-do-carmo-ker": {
+      "name": "Delma do Carmo Ker",
+      "title": "Mestra em educação, ciências e tecnologias. Especialista em psicopedagogia clinica institucional e gestão escolar, graduada em pedagogia e história.",
+      "photo": "/sites/magister/cursos/consultores/delma-do-carmo-ker.webp"
+    },
+    "dirlan-bravo": {
+      "name": "Dirlan Bravo",
+      "title": "Doutora em Educação (UFES)",
+      "photo": "/sites/magister/cursos/consultores/dirlan-bravo.webp"
+    },
+    "douglas-farias": {
+      "name": "Douglas Farias",
+      "title": "Político e educador, atua como Secretário Municipal da Educação de Coreaú, no Ceará. Sob sua gestão, o município alcançou posições de destaque nacional, incluindo o 1º lugar do Brasil no IDEB (2023 e 2025).",
+      "photo": "/sites/magister/cursos/consultores/douglas-farias.webp"
+    },
+    "eduardo-miranda": {
+      "name": "Eduardo Miranda",
+      "title": "Psicólogo",
+      "photo": "/sites/magister/cursos/consultores/eduardo-miranda.webp"
+    },
+    "eliana-comerio": {
+      "name": "Eliana Comério",
+      "title": "Escritora",
+      "photo": "/sites/magister/cursos/consultores/eliana-comerio.webp"
+    },
+    "fabio-bigati": {
+      "name": "Fábio Bigati",
+      "title": "Mestre em educação",
+      "photo": "/sites/magister/cursos/consultores/fabio-bigati.webp"
+    },
+    "felipe-junior-mauricio-pomuchenq": {
+      "name": "Felipe Junior Mauricio Pomuchenq",
+      "title": "Coordenador do centro de formação e reflexão do MEPES",
+      "photo": "/sites/magister/cursos/consultores/felipe-junior-mauricio-pomuchenq.webp"
+    },
+    "flavia-regiane-correia-da-silva": {
+      "name": "Flávia Regiane Correia da Silva",
+      "title": "Psicóloga e Analista do Comportamento",
+      "photo": "/sites/magister/cursos/consultores/flavia-regiane-correia-da-silva.webp"
+    },
+    "geisa-hupp-lacerda": {
+      "name": "Geisa Hupp Lacerda",
+      "title": "Mestra em Ciências das Religiões",
+      "photo": "/sites/magister/cursos/consultores/geisa-hupp-lacerda.webp"
+    },
+    "geraldo-pecanha": {
+      "name": "Geraldo Peçanha",
+      "title": "Prof. Dr. Geraldo Peçanha de Almeida é psicanalista.",
+      "photo": "/sites/magister/cursos/consultores/geraldo-pecanha.webp"
+    },
+    "gesselia": {
+      "name": "Gessélia",
+      "title": "Consultora educacional",
+      "photo": "/sites/magister/cursos/consultores/gesselia.webp"
+    },
+    "gisele-de-nadai": {
+      "name": "Gisele de Nadai",
+      "title": "Doutora e mestra em Educação",
+      "photo": "/sites/magister/cursos/consultores/gisele-de-nadai.webp"
+    },
+    "gustavo-arns": {
+      "name": "Gustavo Arns",
+      "title": "Mestre em Estudos da Felicidade",
+      "photo": "/sites/magister/cursos/consultores/gustavo-arns.webp"
+    },
+    "helder-guastti": {
+      "name": "Helder Guastti",
+      "title": "Professor, mediador de leitura e pesquisador das infâncias. Educador do ano pelo Prêmio Educador Nota 10 e Finalista do Global Teacher Prize.",
+      "photo": "/sites/magister/cursos/consultores/helder-guastti.webp"
+    },
+    "henrique-folster": {
+      "name": "Henrique Folster",
+      "title": "Professor de Matemática e influenciador digital",
+      "photo": "/sites/magister/cursos/consultores/henrique-folster.webp"
+    },
+    "heraldo": {
+      "name": "Heraldo",
+      "title": "Professor de Matemática",
+      "photo": "/sites/magister/cursos/consultores/heraldo.webp"
+    },
+    "israel-boniek": {
+      "name": "Israel Boniek",
+      "title": "Doutor em Educação, bacharel em Filosofia (UFSC) e mestre em Teologia",
+      "photo": "/sites/magister/cursos/consultores/israel-boniek.webp"
+    },
+    "jordana-neri": {
+      "name": "Jordana Neri",
+      "title": "Doutora e mestra em Botânica",
+      "photo": "/sites/magister/cursos/consultores/jordana-neri.webp"
+    },
+    "jose-motta": {
+      "name": "José Motta",
+      "title": "Doutorando em Educação e Mestre em Tecnologias Emergentes em Educação",
+      "photo": "/sites/magister/cursos/consultores/jose-motta.webp"
+    },
+    "leticia-frechiani": {
+      "name": "Leticia Frechiani",
+      "title": "Graduada em Ciências Biológicas",
+      "photo": "/sites/magister/cursos/consultores/leticia-frechiani.webp"
+    },
+    "luiz-filipe-souza-dias": {
+      "name": "Luiz Filipe Souza Dias",
+      "title": "Psicólogo",
+      "photo": "/sites/magister/cursos/consultores/luiz-filipe-souza-dias.webp"
+    },
+    "maira-satiro": {
+      "name": "Maíra Sátiro",
+      "title": "Psicóloga Clínica da Infância e da Adolescência",
+      "photo": "/sites/magister/cursos/consultores/maira-satiro.webp"
+    },
+    "marco-antonio-sulenta": {
+      "name": "Marco Antônio Sulenta",
+      "title": "Formado em Marketing, edição de vídeo, design e cinema",
+      "photo": "/sites/magister/cursos/consultores/marco-antonio-sulenta.webp"
+    },
+    "mariana-guidolini": {
+      "name": "Mariana Guidolini",
+      "title": "Jornalista por formação",
+      "photo": "/sites/magister/cursos/consultores/mariana-guidolini.webp"
+    },
+    "marta-alves-da-cruz": {
+      "name": "Marta Alves da Cruz",
+      "title": "Doutora e Mestra em Educação",
+      "photo": "/sites/magister/cursos/consultores/marta-alves-da-cruz.webp"
+    },
+    "michelle-jordao": {
+      "name": "Michelle Jordão",
+      "title": "Pós doutoranda, doutora e mestra em Educação",
+      "photo": "/sites/magister/cursos/consultores/michelle-jordao.webp"
+    },
+    "noelia-da-silva": {
+      "name": "Noélia da Silva",
+      "title": "Escritora, professora e pesquisadora em Educação",
+      "photo": "/sites/magister/cursos/consultores/noelia-da-silva.webp"
+    },
+    "professor-ph": {
+      "name": "Professor PH",
+      "title": "Mestre em Educação Tecnológica (IFTM)",
+      "photo": "/sites/magister/cursos/consultores/professor-ph.webp"
+    },
+    "rayner-raulino": {
+      "name": "Rayner Raulino",
+      "title": "Doutor e Mestre em Educação (PPGE/UFES). Pedagogo (UFES).",
+      "photo": "/sites/magister/cursos/consultores/rayner-raulino.webp"
+    },
+    "rita-maria-vissi": {
+      "name": "Rita Maria Vissi",
+      "title": "Professora há 23 anos",
+      "photo": "/sites/magister/cursos/consultores/rita-maria-vissi.webp"
+    },
+    "roberto-telau": {
+      "name": "Roberto Telau",
+      "title": "Licenciado em Letras Português/Inglês pela UNIVEN.",
+      "photo": "/sites/magister/cursos/consultores/roberto-telau.webp"
+    },
+    "ronis-faria": {
+      "name": "Ronis Faria",
+      "title": "Doutor e Mestre em Letras",
+      "photo": "/sites/magister/cursos/consultores/ronis-faria.webp"
+    },
+    "rosemari-probst": {
+      "name": "Rosemari Probst",
+      "title": "Mestre em educação",
+      "photo": "/sites/magister/cursos/consultores/rosemari-probst.webp"
+    },
+    "thiago-gusmao": {
+      "name": "Thiago Gusmão",
+      "title": "Médico, Neurologista da infância e adolescência pela UFF-RJ. Especialista no Transtorno do Espectro do Autismo. Mestre em Análise do Comportamento PUC- SP.",
+      "photo": "/sites/magister/cursos/consultores/thiago-gusmao.webp"
+    },
+    "vanessa-martins": {
+      "name": "Vanessa Martins",
+      "title": "Mestra em Linguística (UFC) e formadora de professores",
+      "photo": "/sites/magister/cursos/consultores/vanessa-martins.webp"
+    },
+    "william-borghetti": {
+      "name": "William Borghetti",
+      "title": "Especialista em Neurocomunicação e Comportamento Adolescente",
+      "photo": "/sites/magister/cursos/consultores/william-borghetti.webp"
+    },
+    "wilson-bomfim-barbosa-junior": {
+      "name": "Wilson Bomfim Barbosa Junior",
+      "title": "Fonoaudiólogo",
+      "photo": "/sites/magister/cursos/consultores/wilson-bomfim-barbosa-junior.webp"
+    }
+  }
+}

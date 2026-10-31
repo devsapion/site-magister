@@ -6,8 +6,7 @@ import { blogCategories, formatPostDate, getBlogCategory, type BlogCategorySlug,
 import type { FreeMaterial } from "@/lib/magister/materials";
 import { GlassHeader } from "../home/glass-header";
 import { homeLinks, logos, trilhaVisuals, type HeaderLink } from "../home/home-content";
-import { ArrowIcon, Magis, SparkleIcon } from "../home/ui";
-import { TrilhaBadge } from "../home/trilhas";
+import { ArrowIcon, Magis, SparkleIcon, TrilhaBadge } from "../home/ui";
 
 export const postHref = (slug: string) => `/blog/${slug}`;
 export const categoryHref = (slug: BlogCategorySlug) => `/blog/categoria/${slug}`;
