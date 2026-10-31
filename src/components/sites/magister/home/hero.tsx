@@ -128,7 +128,10 @@ export function NumbersRibbon() {
     ...platformNumbers,
   ];
   return (
-    <div className="relative z-[1] bg-[linear-gradient(100deg,#7a35e6_0%,#9b5cf6_55%,#b07cff_100%)] py-4 text-white shadow-[0_20px_40px_-24px_rgba(90,30,190,0.8)]">
+    <div
+      data-pausable
+      className="relative z-[1] bg-[linear-gradient(100deg,#7a35e6_0%,#9b5cf6_55%,#b07cff_100%)] py-4 text-white shadow-[0_20px_40px_-24px_rgba(90,30,190,0.8)]"
+    >
       <Marquee label="A plataforma em números" durationS={36}>
         {numbers.map((item) => (
           <div key={item.label} className="flex shrink-0 items-center gap-3 pr-10 tablet:pr-14">

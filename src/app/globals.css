@@ -202,6 +202,70 @@
   animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
+/* Headline whose `.mg-word` spans rise one after another (delays set inline). */
+@keyframes mg-word-rise {
+  from { opacity: 0; transform: translate3d(0, 45%, 0) rotate(2deg); }
+  to { opacity: 1; transform: none; }
+}
+[data-animate="words"] .mg-word { opacity: 0; }
+[data-animate="words"].mg-animated .mg-word {
+  animation: mg-word-rise 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+@media (prefers-reduced-motion: reduce) {
+  [data-animate="words"] .mg-word,
+  [data-animate="words"].mg-animated .mg-word { opacity: 1; animation: none; }
+}
+
+/*
+ * Straight dashed trail, flowing like the SVG `.mg-dash-flow` curves. The dashes slide with a
+ * transform (one dash period) so the browser moves them on the GPU instead of repainting.
+ */
+@keyframes mg-dash-x {
+  from { transform: translate3d(-18px, 0, 0); }
+  to { transform: none; }
+}
+.mg-dash-line {
+  overflow: hidden;
+}
+.mg-dash-line::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 0 -18px;
+  background-image: linear-gradient(90deg, rgba(132, 67, 234, 0.4) 55%, transparent 0);
+  background-size: 18px 2px;
+  animation: mg-dash-x 1.2s linear infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .mg-dash-line::before { animation: none; }
+}
+
+/* Looping animations stop while their section is off screen (RevealObserver sets the flag). */
+[data-offscreen] *,
+[data-offscreen] *::before,
+[data-offscreen] *::after {
+  animation-play-state: paused !important;
+}
+
+/* Wall of praise prints: each column holds two copies of its prints and slides up by one copy. */
+@keyframes mg-wall {
+  to { transform: translate3d(0, -50%, 0); }
+}
+.mg-wall-track {
+  animation: mg-wall var(--mg-wall-duration, 40s) linear infinite;
+  will-change: transform;
+}
+.mg-wall-track[data-reverse] {
+  animation-direction: reverse;
+}
+.mg-wall:hover .mg-wall-track,
+.mg-wall:focus-within .mg-wall-track {
+  animation-play-state: paused;
+}
+@media (prefers-reduced-motion: reduce) {
+  .mg-wall-track { animation: none; }
+  .mg-wall { overflow-y: auto; }
+}
+
 /* Mint marker behind key words in headings. */
 .mg-mark {
   background-image: linear-gradient(var(--color-mg-mint), var(--color-mg-mint));
