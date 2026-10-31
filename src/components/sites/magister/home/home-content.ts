@@ -1,4 +1,4 @@
-import { links, testimonialRows, trilhas, type TrilhaSlug } from "../content";
+import { links, trilhas, type TrilhaSlug } from "../content";
 
 /** Assets of the redesigned home (app screenshots, mascot, consultants, new logo). */
 export const HOME = "/sites/magister/home";
@@ -6,7 +6,8 @@ export const HOME = "/sites/magister/home";
 export const homeLinks = {
   ...links,
   // Absolute so the header links also work from the blog pages.
-  resultados: "/#resultados",
+  // The municipal-impact section of the home, the pitch for public networks.
+  governo: "/#governo",
   diferenciais: "/#diferenciais",
   especialistas: "/#especialistas",
   planos: "/#assine",
@@ -32,10 +33,9 @@ export const navItems: HeaderLink[] = [
     children: trilhas.map((trilha) => ({ label: trilha.title, href: trilha.href, description: trilha.description })),
   },
   { label: "Diferenciais", href: homeLinks.diferenciais },
-  { label: "Resultados", href: homeLinks.resultados },
   { label: "Planos", href: homeLinks.planos },
   { label: "Blog", href: homeLinks.blog },
-  { label: "Governo", href: links.governo },
+  { label: "Governo", href: homeLinks.governo },
 ];
 
 export const logos = {
@@ -134,27 +134,39 @@ export const trilhaVisuals: Record<TrilhaSlug, TrilhaVisual> = {
   },
 };
 
-/** How courses are made (the old flip cards) plus certification, illustrated by Magis. */
-export const pillars: { title: string; text: string; pose: MagisPose }[] = [
+export interface Pillar {
+  title: string;
+  text: string;
+  icon: "target" | "experts" | "idea" | "award";
+  /** Icon tile gradient, one track color per step. */
+  gradient: string;
+}
+
+/** How courses are made (the old flip cards) plus certification, as numbered steps. */
+export const pillars: Pillar[] = [
   {
     title: "Problema x Solução",
     text: "Cada curso nasce de uma dor real da educação. Nos debruçamos sobre ela e desenvolvemos a solução.",
-    pose: "lupa",
+    icon: "target",
+    gradient: "linear-gradient(140deg,#ffa651,#e8590c)",
   },
   {
     title: "Professores especialistas",
     text: "Consultores, professores, pesquisadores, criativos, palestrantes, mágicos, pensadores e empreendedores.",
-    pose: "pensando",
+    icon: "experts",
+    gradient: "linear-gradient(140deg,#b07cff,#7a35e6)",
   },
   {
     title: "Inovação e Educação",
     text: "Soluções concebidas a partir da premissa da Nova Educação e da transformação digital.",
-    pose: "magia",
+    icon: "idea",
+    gradient: "linear-gradient(140deg,#48d3aa,#099268)",
   },
   {
     title: "Certificação",
     text: "Certificado de conclusão em todos os cursos, válido em todo o território nacional.",
-    pose: "comemorando",
+    icon: "award",
+    gradient: "linear-gradient(140deg,#58acf3,#1971c2)",
   },
 ];
 
@@ -205,7 +217,6 @@ export interface Diferencial {
     | { kind: "phone"; screen: keyof typeof appScreens; tint: string }
     | { kind: "labs"; tint: string }
     | { kind: "certificate"; tint: string };
-  cta: { label: string; href: string };
 }
 
 export const diferenciais: Diferencial[] = [
@@ -218,7 +229,6 @@ export const diferenciais: Diferencial[] = [
     text: "Personalizamos a experiência de aprendizagem, adaptando o ensino às suas necessidades individuais com algoritmos avançados e inteligência artificial.",
     chips: ["Aulas em vídeo", "E-books", "Atividades práticas", "100% online"],
     visual: { kind: "phone", screen: "aula", tint: "#e6fcf5" },
-    cta: { label: "Começar agora", href: links.signUp },
   },
   {
     id: "analise-de-perfil",
@@ -228,7 +238,6 @@ export const diferenciais: Diferencial[] = [
     title: "Descubra suas forças e gargalos",
     text: "Nossa inteligência artificial avalia seu perfil a partir de objetivos, interesses e lacunas de conhecimento e cria cursos exclusivos, personalizados instantaneamente.",
     visual: { kind: "phone", screen: "diagnostico", tint: "#fff4e6" },
-    cta: { label: "Fazer meu diagnóstico", href: links.signUp },
   },
   {
     id: "magister-labs",
@@ -238,7 +247,6 @@ export const diferenciais: Diferencial[] = [
     title: "Inteligência artificial a favor do professor",
     text: "25 ferramentas de IA para o dia a dia: da criação automática de planos de aula alinhados à BNCC à elaboração de listas de exercícios personalizadas.",
     visual: { kind: "labs", tint: "#e6fcf5" },
-    cta: { label: "Conhecer o Labs", href: links.signUp },
   },
   {
     id: "gamificacao",
@@ -249,7 +257,6 @@ export const diferenciais: Diferencial[] = [
     text: "Ao estudar e participar da comunidade, o cursista acumula pontos, sobe de nível, coleciona medalhas e disputa o ranking.",
     chips: ["14 níveis", "+15 medalhas", "Ranking da rede"],
     visual: { kind: "phone", screen: "ranking", tint: "#f3edff" },
-    cta: { label: "Quero jogar", href: links.signUp },
   },
   {
     id: "magister-club",
@@ -260,7 +267,6 @@ export const diferenciais: Diferencial[] = [
     text: "Feed, stories, fóruns por trilha, mensagens e curadoria diária de notícias da educação. Troca de experiências e suporte para aprimorar as práticas educacionais.",
     chips: ["25 masterclasses", "30 episódios do SapionCast", "70 videodicas"],
     visual: { kind: "phone", screen: "club", tint: "#fff4e6" },
-    cta: { label: "Entrar no Club", href: links.signUp },
   },
   {
     id: "certificado",
@@ -276,7 +282,6 @@ export const diferenciais: Diferencial[] = [
       "Resolução CNE nº 04/99 – MEC",
     ],
     visual: { kind: "certificate", tint: "#f3edff" },
-    cta: { label: "Teste por 14 dias grátis", href: links.signUp },
   },
 ];
 
@@ -288,39 +293,94 @@ export const labsTools = [
   { name: "PEI/PDI", icon: `${HOME}/labs/pei-pdi.svg` },
 ];
 
-/**
- * Impact in the partner networks. Placeholder wording kept from the previous site
- * ("milhares", "dezenas", "+2.000h"): replace with the measured municipal numbers.
- */
-export const impactStats = [
-  {
-    value: "Milhares",
-    text: "de professores cursistas em formação continuada nas redes parceiras.",
-    icon: "users",
+/** Big numbers of the partner networks; `count` animates from zero when it scrolls into view. */
+export const impactNumbers = {
+  hours: {
+    count: 15,
+    label: "horas de formação",
+    text: "Formação continuada certificada, concluída pelos professores das redes parceiras.",
   },
+  interactions: {
+    count: 100,
+    label: "interações na plataforma",
+    text: "Aulas assistidas, atividades entregues, fóruns e conversas no Magister Club.",
+  },
+  aiContents: {
+    count: 30,
+    label: "conteúdos gerados com a nossa IA",
+    text: "Planos de aula, slides, avaliações e atividades criados no Magister Labs.",
+  },
+};
+
+/** Reach of the platform, kept as words like on the previous site. */
+export const reachStats = [
   {
     value: "Dezenas",
-    text: "de municípios transformando a formação dos seus professores com a Sapion Magister.",
+    label: "de municípios e órgãos públicos",
+    text: "Secretarias de educação que escolheram a Sapion Magister para formar seus professores.",
     icon: "building",
   },
   {
-    value: "+2.000h",
-    text: "de conteúdo em videoaulas, e-books, atividades práticas e masterclasses.",
-    icon: "clock",
+    value: "Milhares",
+    label: "de professores em formação",
+    text: "Professores, coordenadores e gestores estudando nas trilhas da plataforma.",
+    icon: "users",
   },
 ] as const;
 
-const allTestimonials = testimonialRows.flat();
+export interface NetworkReason {
+  /** Shown along the collapsed panel. */
+  short: string;
+  tag: string;
+  title: string;
+  text: string;
+  gradient: string;
+  screen: keyof typeof appScreens;
+  pose: MagisPose;
+}
 
-/** Featured in the rotating card next to the impact numbers. */
-export const featuredTestimonials = [
-  allTestimonials[7],
-  allTestimonials[3],
-  allTestimonials[6],
-  allTestimonials[2],
-  allTestimonials[1],
-  allTestimonials[8],
+/** "Porque você deveria levar a Sapion Magister para a sua rede?", from the previous /governo page. */
+export const networkReasons: NetworkReason[] = [
+  {
+    short: "Qualidade do ensino",
+    tag: "IDEB e aprendizagem",
+    gradient: "radial-gradient(90% 120% at 0% 100%, #3d0b8a 0%, rgba(61,11,138,0) 60%), linear-gradient(120deg, #8443ea 0%, #9b5cf6 50%, #b07cff 100%)",
+    screen: "aula",
+    pose: "ideia",
+    title: "Impacto direto na qualidade do ensino",
+    text: "A Sapion Magister oferece formação prática e personalizada que reflete diretamente na sala de aula. Com professores mais capacitados, sua rede eleva os índices educacionais, como o IDEB, e promove uma aprendizagem mais significativa para os alunos.",
+  },
+  {
+    short: "Soluções personalizadas",
+    tag: "IA e gamificação",
+    gradient: "radial-gradient(90% 120% at 0% 100%, #05523b 0%, rgba(5,82,59,0) 60%), linear-gradient(120deg, #099268 0%, #20c997 60%, #48d3aa 100%)",
+    screen: "diagnostico",
+    pose: "magia",
+    title: "Soluções inovadoras e personalizadas",
+    text: "Nossa plataforma combina inteligência artificial, gamificação e metodologias inovadoras para atender às demandas da sua rede de forma personalizada, potencializando o desenvolvimento contínuo dos educadores.",
+  },
+  {
+    short: "Suporte completo",
+    tag: "Club, Labs e Análise de Perfil",
+    gradient: "radial-gradient(90% 120% at 0% 100%, #8a2c05 0%, rgba(138,44,5,0) 60%), linear-gradient(120deg, #e8590c 0%, #ff922b 60%, #ffa651 100%)",
+    screen: "club",
+    pose: "oculos",
+    title: "Suporte completo para gestores e professores",
+    text: "Além das formações, oferecemos ferramentas como o Magister Club, Magister Labs e a Análise de Perfil, que auxiliam na gestão pedagógica, incentivam a criatividade e proporcionam um ambiente colaborativo.",
+  },
 ];
 
-/** Shown as cards under "Quem usa aprova!". */
-export const gridTestimonials = [allTestimonials[0], allTestimonials[4], allTestimonials[5]];
+export interface VideoTestimonial {
+  /** YouTube video id: the `v=` part of a watch link. */
+  youtubeId: string;
+  title: string;
+  /** Who speaks, or the partner network. */
+  subtitle: string;
+}
+
+/** Recorded testimonials in the video carousel. Five copies of one case while the others are recorded. */
+export const videoTestimonials: VideoTestimonial[] = Array.from({ length: 5 }, () => ({
+  youtubeId: "Srq-Oflp1wE",
+  title: "Case de sucesso",
+  subtitle: "São Roque do Canaã (ES)",
+}));

@@ -1,6 +1,14 @@
+import { Award, GraduationCap, Lightbulb, Target } from "lucide-react";
 import Image from "next/image";
-import { consultants, pillars, type Consultant } from "./home-content";
-import { Magis, Mark, Marquee, SectionHeading } from "./ui";
+import { consultants, pillars, type Consultant, type Pillar } from "./home-content";
+import { Mark, Marquee, SectionHeading } from "./ui";
+
+const pillarIcons: Record<Pillar["icon"], typeof Target> = {
+  target: Target,
+  experts: GraduationCap,
+  idea: Lightbulb,
+  award: Award,
+};
 
 function ConsultantCard({ consultant }: { consultant: Consultant }) {
   return (
@@ -37,22 +45,32 @@ export function EspecialistasSection() {
           description="40 consultores especialistas — mestres, doutores e referências da educação brasileira — criam cursos para os desafios reais da sala de aula."
         />
 
-        <ol className="mx-auto mt-16 grid max-w-[1080px] grid-cols-1 gap-x-5 gap-y-10 tablet:grid-cols-2 desktop:grid-cols-4">
-          {pillars.map((pillar, i) => (
-            <li
-              key={pillar.title}
-              className="relative flex flex-col items-center rounded-[28px] border border-mg-line bg-white px-6 pt-10 pb-7 text-center shadow-[0_20px_40px_-34px_rgba(60,20,140,0.5)]"
-              data-animate="fadeUp"
-              data-delay={i * 120}
-            >
-              <span className="absolute -top-5 left-1/2 grid size-10 -translate-x-1/2 place-items-center rounded-full bg-mg-purple text-[18px] font-bold text-white ring-[5px] ring-mg-lilac">
-                {i + 1}
-              </span>
-              <Magis pose={pillar.pose} sizes="160px" className="-my-2 h-[140px] w-auto" />
-              <h3 className="mt-4 text-[19px] font-bold leading-tight text-mg-ink">{pillar.title}</h3>
-              <p className="mt-2 text-[14px] leading-[1.55] text-mg-muted">{pillar.text}</p>
-            </li>
-          ))}
+        {/* Numbered steps on a dashed trail (desktop), each card with its own track color */}
+        <ol className="relative mx-auto mt-16 grid max-w-[1080px] gap-5 tablet:grid-cols-2 desktop:grid-cols-4">
+          <span
+            className="mg-dash-line pointer-events-none absolute top-[27px] right-[12%] left-[12%] hidden h-[2px] desktop:block"
+            aria-hidden="true"
+          />
+          {pillars.map((pillar, i) => {
+            const Icon = pillarIcons[pillar.icon];
+            return (
+              <li key={pillar.title} className="relative flex flex-col" data-animate="fadeUp" data-delay={i * 120}>
+                <span className="relative mx-auto grid size-14 place-items-center rounded-full bg-white text-[18px] font-bold text-mg-purple shadow-[0_12px_28px_-14px_rgba(60,20,140,0.6)] ring-[6px] ring-mg-lilac">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <div className="group mt-6 flex flex-1 flex-col rounded-[28px] border border-mg-line bg-white p-7 shadow-[0_20px_40px_-34px_rgba(60,20,140,0.5)] transition-transform duration-300 hover:-translate-y-1">
+                  <span
+                    className="grid size-14 -rotate-6 place-items-center rounded-[18px] text-white shadow-[0_14px_28px_-14px_rgba(60,20,140,0.7)] transition-transform duration-300 group-hover:rotate-0"
+                    style={{ backgroundImage: pillar.gradient }}
+                  >
+                    <Icon className="size-6" strokeWidth={2} />
+                  </span>
+                  <h3 className="mt-6 text-[19px] font-bold leading-tight text-mg-ink">{pillar.title}</h3>
+                  <p className="mt-2 text-[15px] leading-[1.6] text-mg-muted">{pillar.text}</p>
+                </div>
+              </li>
+            );
+          })}
         </ol>
       </div>
 

@@ -1,8 +1,8 @@
 import Image from "next/image";
+import { getPraisePrints } from "@/lib/magister/praise-prints";
 import { partners } from "../content";
-import { gridTestimonials } from "./home-content";
-import { Magis, Mark, Marquee, SparkleIcon, StoreBadges } from "./ui";
-import { VideoCard } from "./video-card";
+import { PraiseWall } from "./praise-wall";
+import { Magis, Mark, Marquee } from "./ui";
 
 function PartnerLogo({ partner }: { partner: (typeof partners)[number] }) {
   return (
@@ -33,54 +33,14 @@ export function ProvaSocialSection() {
               Quem usa <Mark>aprova!</Mark>
             </h2>
             <p className="mt-3 text-[16px] leading-[1.6] text-mg-muted tablet:text-[18px]">
-              Professores e redes de ensino já transformaram sua formação continuada com a Sapion Magister.
+              Elogios de professores e gestores, direto da plataforma, do nosso suporte e das redes sociais.
             </p>
           </div>
         </div>
 
-        <div className="mt-12 grid gap-5 desktop:grid-cols-[360px_1fr]">
-          <div
-            className="flex flex-col rounded-[32px] border border-mg-line bg-white p-7 shadow-[0_30px_60px_-45px_rgba(60,20,140,0.6)]"
-            data-animate="fadeUp"
-          >
-            <span className="grid size-14 place-items-center rounded-2xl bg-[linear-gradient(140deg,#b07cff,#7a35e6)] text-white">
-              <SparkleIcon className="size-6" />
-            </span>
-            <p className="mt-6 text-[40px] font-bold leading-none tracking-[-0.03em] text-mg-ink">100% online</p>
-            <p className="mt-4 flex-1 text-[16px] leading-[1.6] text-mg-muted">
-              Estude no seu ritmo, no computador ou no app. <strong className="font-semibold text-mg-ink">Aulas em vídeo, e-books e atividades práticas</strong> sempre à mão.
-            </p>
-            <StoreBadges className="mt-6 flex-wrap" imageClassName="h-[38px]" />
-          </div>
-          <div
-            className="rounded-[32px] border border-mg-line bg-white p-3 shadow-[0_30px_60px_-45px_rgba(60,20,140,0.6)] tablet:p-4"
-            data-animate="fadeUp"
-            data-delay={120}
-          >
-            <VideoCard />
-          </div>
+        <div className="mt-12" data-animate="fadeUp">
+          <PraiseWall prints={getPraisePrints()} />
         </div>
-
-        <ul className="mt-5 grid gap-5 tablet:grid-cols-3">
-          {gridTestimonials.map((testimonial, i) => (
-            <li
-              key={testimonial.text}
-              className="flex flex-col rounded-[28px] border border-mg-line bg-white p-7 shadow-[0_30px_60px_-50px_rgba(60,20,140,0.6)]"
-              data-animate="fadeUp"
-              data-delay={i * 120}
-            >
-              <div className="flex gap-1 text-[#ffb400]" aria-label="5 de 5 estrelas">
-                {Array.from({ length: 5 }, (_, star) => (
-                  <svg key={star} viewBox="0 0 20 20" className="size-[18px] fill-current" aria-hidden="true">
-                    <path d="M10 1.5l2.6 5.4 5.9.8-4.3 4.1 1 5.9L10 15l-5.2 2.7 1-5.9L1.5 7.7l5.9-.8L10 1.5Z" />
-                  </svg>
-                ))}
-              </div>
-              <blockquote className="mt-4 flex-1 text-[16px] leading-[1.65] text-mg-ink">“{testimonial.text}”</blockquote>
-              <p className="mt-5 text-[14px] font-semibold text-mg-purple">{testimonial.name}</p>
-            </li>
-          ))}
-        </ul>
       </div>
 
       <div className="mt-16 flex flex-col gap-4 tablet:gap-5" data-animate="fadeUp">

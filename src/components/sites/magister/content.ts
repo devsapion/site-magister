@@ -79,50 +79,6 @@ export const subscriptionBenefits = [
   "Dez cursos personalizados por ano.",
 ];
 
-export interface Testimonial {
-  text: string;
-  name: string;
-}
-
-export const testimonialRows: Testimonial[][] = [
-  [
-    {
-      text: "Linguagem de fácil compreensão. Ótimas reflexões que intensificam o nosso aprendizado",
-      name: "Patrícia de Souza Oliveira",
-    },
-    { text: "Quanta informação, aula muito enriquecedora para a minha prática pedagógica", name: "Regina Scardua" },
-    {
-      text: "Linguagem clara e objetiva, o vídeo traduz tudo o que a família passa ao receber o diagnóstico de um filho",
-      name: "Regina Scardua",
-    },
-  ],
-  [
-    {
-      text: "Todo conteúdo passado está sendo muito valioso, pois as especificidades nos fazem buscar cada vez mais o conhecimento",
-      name: "Josilânia Maria Lemke Buss",
-    },
-    { text: "Uma linguagem de fácil entendimento! Muito bom o curso!", name: "Marysabel Canal Paranhos" },
-    {
-      text: "Estou gostando muito dos cursos da Magister! Uma linguagem clara e objetiva!",
-      name: "Larissa Da Silva Paula Barcelos",
-    },
-  ],
-  [
-    {
-      text: "Adorei o módulo que acabei de estudar, a sugestão de atividade prática e todos os conhecimentos agora adquiridos serão rotineiros",
-      name: "Josiane Machado",
-    },
-    {
-      text: "Excelente aula. Muito explicativa, de forma clara e um conteúdo maravilhoso. É preciso muito estudo! Estamos realmente despreparados para nossa rotina escolar com o TEA",
-      name: "Josiane Machado",
-    },
-    {
-      text: "Ótimo curso, um excelente complemento curricular para a nossa prática pedagógica diária!",
-      name: "Luana Guasti",
-    },
-  ],
-];
-
 export const partners = [
   { src: `${ASSETS}/partners/partner-7.png`, alt: "Prefeitura de Colatina" },
   { src: `${ASSETS}/partners/partner-6.png`, alt: "Prefeitura de Alto Rio Novo" },
