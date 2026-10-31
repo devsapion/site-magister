@@ -157,10 +157,13 @@ export function PraiseWall({ prints }: { prints: PraisePrint[] }) {
 
   return (
     <>
-      <div className="mg-wall relative h-[600px] overflow-hidden [mask-image:linear-gradient(to_bottom,transparent,#000_10%,#000_90%,transparent)] tablet:h-[720px]">
+      <div className="mg-wall relative h-[600px] overflow-hidden tablet:h-[720px]">
         {layouts.map((layout) => (
           <Wall key={layout.columns} prints={prints} {...layout} onOpen={setOpen} />
         ))}
+        {/* Fades at both ends: plain overlays, much cheaper than masking the moving columns */}
+        <span className="pointer-events-none absolute inset-x-0 top-0 h-[12%] bg-[linear-gradient(to_bottom,var(--color-mg-lilac),transparent)]" />
+        <span className="pointer-events-none absolute inset-x-0 bottom-0 h-[12%] bg-[linear-gradient(to_top,var(--color-mg-lilac),transparent)]" />
       </div>
       {open !== null && <Lightbox prints={prints} index={open} onChange={setOpen} onClose={() => setOpen(null)} />}
     </>

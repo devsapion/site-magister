@@ -4,16 +4,17 @@ import { useEffect, useRef } from "react";
 
 /**
  * Number that counts up from zero the first time it scrolls into view. The server renders the
- * final value (no-JS, crawlers, reduced motion); the animation writes straight to the DOM so the
- * count does not re-render React on every frame.
+ * final value (no-JS, crawlers, reduced motion); the animation edits the text node in place, so
+ * the count neither re-renders React nor fires the page's childList observers on every frame.
  */
 export function CountUp({ to, durationMs = 1800 }: { to: number; durationMs?: number }) {
   const ref = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
-    const el = ref.current;
-    if (!el || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    el.textContent = "0";
+    const text = ref.current?.firstChild;
+    if (!(text instanceof Text) || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const el = ref.current as HTMLSpanElement;
+    text.data = "0";
     let frame = 0;
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -24,7 +25,7 @@ export function CountUp({ to, durationMs = 1800 }: { to: number; durationMs?: nu
         const tick = (now: number) => {
           start ||= now;
           const t = Math.min((now - start) / durationMs, 1);
-          el.textContent = String(Math.round(to * (1 - (1 - t) ** 3)));
+          text.data = String(Math.round(to * (1 - (1 - t) ** 3)));
           if (t < 1) frame = requestAnimationFrame(tick);
         };
         frame = requestAnimationFrame(tick);
@@ -35,7 +36,7 @@ export function CountUp({ to, durationMs = 1800 }: { to: number; durationMs?: nu
     return () => {
       observer.disconnect();
       cancelAnimationFrame(frame);
-      el.textContent = String(to);
+      text.data = String(to);
     };
   }, [to, durationMs]);
 

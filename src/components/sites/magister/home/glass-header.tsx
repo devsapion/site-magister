@@ -84,7 +84,7 @@ export function GlassHeader({
             />
           </Link>
 
-          <nav aria-label="Principal" className={cn("hidden items-center gap-1 desktop:flex", search ? "ml-4" : "mx-auto")}>
+          <nav aria-label="Principal" className="ml-4 hidden items-center gap-1 desktop:flex">
             {links.map((item) =>
               item.children ? (
                 <div key={item.href} className="group relative">
@@ -128,7 +128,7 @@ export function GlassHeader({
             )}
           </nav>
 
-          <div className={cn("hidden items-center gap-2 desktop:flex", search ? "ml-auto" : "ml-0")}>
+          <div className="ml-auto hidden items-center gap-2 desktop:flex">
             {search ? (
               <SearchField className="w-[220px] xl:w-[260px]" />
             ) : (

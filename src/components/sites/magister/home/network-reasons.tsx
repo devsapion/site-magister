@@ -45,7 +45,8 @@ function Panel({ reason, index, active, onOpen }: { reason: NetworkReason; index
       <div
         className={cn(
           "pointer-events-none absolute inset-y-0 right-0 w-[440px] transition-[opacity,transform] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]",
-          active ? "translate-y-0 opacity-100 delay-300" : "translate-y-8 opacity-0",
+          // Hidden visuals keep their mascot and sparkles still.
+          active ? "translate-y-0 opacity-100 delay-300" : "translate-y-8 opacity-0 [&_*]:[animation-play-state:paused]",
         )}
         aria-hidden="true"
       >
