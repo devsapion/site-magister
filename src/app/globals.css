@@ -434,13 +434,6 @@ body:has(.mg-home) {
 [data-animate="fadeLeft"].mg-animated { animation-name: mg-fadeLeft; }
 [data-animate="fadeRight"].mg-animated { animation-name: mg-fadeRight; }
 
-/* The course trail fills with the track color as the visitor walks down the list. */
-.mg-trail-fill {
-  transform: scaleY(var(--fill, 0));
-  transform-origin: top;
-  transition: transform 0.2s linear;
-}
-
 @media (prefers-reduced-motion: reduce) {
   .mg-layer,
   .mg-hero-copy { transform: none; opacity: 1; }
