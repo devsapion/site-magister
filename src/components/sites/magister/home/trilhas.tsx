@@ -16,7 +16,7 @@ export function TrilhaCard({ trilha }: { trilha: Trilha }) {
       <TrilhaBadge
         icon={visual.icon}
         gradient={visual.gradient}
-        className="relative grid size-[88px] place-items-center rounded-full shadow-[0_14px_30px_-14px_rgba(0,0,0,0.45)] ring-[6px] ring-white transition-transform duration-500 group-hover:scale-105 group-hover:-rotate-6"
+        className="relative grid size-[88px] place-items-center rounded-full shadow-[0_14px_30px_-14px_rgba(0,0,0,0.45)] transition-transform duration-500 group-hover:scale-105 group-hover:-rotate-6"
       />
       <h3 className="mt-5 text-[22px] font-bold leading-tight" style={{ color: visual.color }}>
         {position} – {trilha.title}

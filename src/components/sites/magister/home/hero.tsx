@@ -98,7 +98,7 @@ export function Hero() {
           </div>
           <div className="mg-rise mt-7 flex flex-col items-center gap-3 [animation-delay:400ms]">
             <StoreBadges imageClassName="h-[40px]" />
-            <p className="text-[13px] text-mg-muted">7 dias de garantia total · Certificado válido em todo o Brasil</p>
+            <p className="text-[13px] text-mg-muted">Certificado válido em todo o Brasil</p>
           </div>
         </div>
 
