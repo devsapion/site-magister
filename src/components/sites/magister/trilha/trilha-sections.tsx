@@ -7,7 +7,7 @@ import { trilhaVisuals } from "../home/home-content";
 import { TrilhaCard } from "../home/trilhas";
 import { buttonStyles, ButtonArrow, Magis, Mark, SectionHeading, SparkleIcon } from "../home/ui";
 import { CountUp } from "./count-up";
-import { CourseTrail } from "./course-trail";
+import { CourseGrid } from "./course-grid";
 
 const statTiles: { key: keyof CatalogTotals; label: string; Icon: typeof Layers }[] = [
   { key: "courses", label: "cursos", Icon: GraduationCap },
@@ -18,7 +18,7 @@ const statTiles: { key: keyof CatalogTotals; label: string; Icon: typeof Layers 
   { key: "consultants", label: "professores", Icon: Users },
 ];
 
-/** White sheet that slides over the hero with the track numbers and its course trail. */
+/** White sheet that slides over the hero with the track numbers and its course cards. */
 export function TrilhaCourses({ trilha, courses, totals }: { trilha: Trilha; courses: Course[]; totals: CatalogTotals }) {
   const visual = trilhaVisuals[trilha.slug];
   const theme = {
@@ -32,7 +32,7 @@ export function TrilhaCourses({ trilha, courses, totals }: { trilha: Trilha; cou
   return (
     <section
       id="cursos"
-      className="relative z-[1] -mt-12 rounded-t-[40px] bg-white pt-16 shadow-[0_-34px_60px_-34px_rgba(30,10,80,0.45)] tablet:rounded-t-[56px] tablet:pt-20 desktop:pt-24"
+      className="relative z-[1] -mt-12 rounded-t-[40px] bg-white pt-16 pb-20 shadow-[0_-34px_60px_-34px_rgba(30,10,80,0.45)] tablet:rounded-t-[56px] tablet:pt-20 tablet:pb-24 desktop:pt-24 desktop:pb-28"
     >
       <span className="absolute top-4 left-1/2 h-1.5 w-14 -translate-x-1/2 rounded-full bg-mg-line" aria-hidden="true" />
       <div className="mx-auto max-w-[1180px] px-5">
@@ -67,7 +67,7 @@ export function TrilhaCourses({ trilha, courses, totals }: { trilha: Trilha; cou
           ))}
         </ul>
 
-        <CourseTrail courses={courses} theme={theme} />
+        <CourseGrid courses={courses} theme={theme} />
       </div>
     </section>
   );
