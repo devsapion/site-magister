@@ -6,6 +6,14 @@ import { InstagramIcon, StoreBadges, TikTokIcon, YouTubeIcon } from "./ui";
 
 const columns = [
   {
+    title: "Plataforma",
+    links: [
+      { label: "Diferenciais", href: homeLinks.diferenciais },
+      { label: "Time de especialistas", href: homeLinks.especialistas },
+      { label: "Sou aluno", href: homeLinks.login },
+    ],
+  },
+  {
     title: "Trilhas",
     links: trilhas.map((trilha) => ({ label: trilha.title, href: trilha.href })),
   },
@@ -19,11 +27,12 @@ const columns = [
     ],
   },
   {
-    title: "Plataforma",
+    title: "Legal",
     links: [
-      { label: "Sou aluno", href: homeLinks.login },
-      { label: "Teste por 14 dias grátis", href: homeLinks.signUp },
-      { label: "Assine agora", href: homeLinks.subscribe },
+      { label: "Política de Privacidade", href: homeLinks.privacidade },
+      { label: "Termos de Uso", href: homeLinks.termos },
+      { label: "LGPD", href: homeLinks.lgpd },
+      { label: "Código de Conduta Anticorrupção", href: homeLinks.anticorrupcao },
     ],
   },
 ];
@@ -48,7 +57,7 @@ const link = "text-[15px] text-white/70 transition-colors duration-300 hover:tex
 export function HomeFooter() {
   return (
     <footer className="bg-mg-night text-white">
-      <div className="mx-auto grid max-w-[1160px] gap-10 px-5 py-14 tablet:grid-cols-2 desktop:grid-cols-[1.3fr_1fr_1fr_1.1fr_1.3fr] desktop:py-16">
+      <div className="mx-auto grid max-w-[1160px] gap-10 px-5 py-14 tablet:grid-cols-2 desktop:grid-cols-[1.2fr_1.1fr_0.8fr_1fr_1.2fr_1.3fr] desktop:gap-x-8 desktop:py-16">
         <div>
           <Image src={logos.white.src} alt="Sapion Magister" width={110} height={32} className="h-[38px] w-auto" />
           <p className="mt-5 max-w-[240px] text-[15px] leading-[1.6] text-white/70">

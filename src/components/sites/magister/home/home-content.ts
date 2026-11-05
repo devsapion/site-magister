@@ -14,6 +14,11 @@ export const homeLinks = {
   blog: "/blog",
   materiais: "/materiais-gratuitos",
   contato: "/contato",
+  // Legal pages: routes reserved for when the content is ready (not built yet).
+  privacidade: "/politica-de-privacidade",
+  termos: "/termos-de-uso",
+  lgpd: "/lgpd",
+  anticorrupcao: "/codigo-de-conduta-anticorrupcao",
   instagram: "https://www.instagram.com/sapion.magister/",
   tiktok: "https://www.tiktok.com/@sapion.magister",
   youtube: "https://www.youtube.com/@sapion.magister",
