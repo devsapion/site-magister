@@ -1,5 +1,6 @@
 import Image from "next/image";
 import type { CSSProperties, ReactNode, SVGProps } from "react";
+import { withBasePath } from "@/lib/base-path";
 import { cn } from "@/lib/utils";
 import { ASSETS, links } from "../content";
 import { magis, type MagisPose } from "./home-content";
@@ -44,7 +45,7 @@ export function TrilhaBadge({ icon, gradient, className }: { icon: string; gradi
     >
       <span
         className="block size-[56%] bg-white"
-        style={{ mask: `url(${icon}) center / contain no-repeat`, WebkitMask: `url(${icon}) center / contain no-repeat` }}
+        style={{ mask: `url(${withBasePath(icon)}) center / contain no-repeat`, WebkitMask: `url(${withBasePath(icon)}) center / contain no-repeat` }}
       />
     </span>
   );

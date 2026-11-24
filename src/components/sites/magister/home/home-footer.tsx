@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { withBasePath } from "@/lib/base-path";
 import { cn } from "@/lib/utils";
 import { trilhas } from "../content";
 import { HOME, homeLinks, logos } from "./home-content";
@@ -70,7 +71,7 @@ export function HomeFooter() {
             <ul className="mt-4 flex flex-col gap-3">
               {column.links.map((item) => (
                 <li key={item.label}>
-                  <a href={item.href} className={link}>
+                  <a href={withBasePath(item.href)} className={link}>
                     {item.label}
                   </a>
                 </li>

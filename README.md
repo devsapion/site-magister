@@ -64,6 +64,20 @@ Crie um `.env.local` na raiz quando precisar delas:
 
 Sem os endpoints, os formulários avisam que o envio ainda não está configurado.
 
+## Publicação
+
+Cada push na `main` publica o site no GitHub Pages pelo workflow [`.github/workflows/deploy-pages.yml`](.github/workflows/deploy-pages.yml): https://devsapion.github.io/site-magister/
+
+O Pages só serve arquivos estáticos, então o workflow gera um export estático (`STATIC_EXPORT=true`) servido sob `/site-magister`. Para reproduzir localmente:
+
+```bash
+STATIC_EXPORT=true NEXT_PUBLIC_BASE_PATH=/site-magister npm run build # gera a pasta out/
+```
+
+Sem `STATIC_EXPORT`, o build continua gerando o servidor standalone usado pelo Docker.
+
+Para os formulários funcionarem no site publicado, cadastre os endpoints como variáveis do repositório e repasse-as no passo de build do workflow.
+
 ## Conteúdo
 
 O catálogo de cursos e os posts do blog ficam em JSON dentro de `src/lib/magister/` e são atualizados pelos scripts em `scripts/`:

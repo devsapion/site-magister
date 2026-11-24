@@ -4,14 +4,34 @@ import { ChevronDown, Search } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { withBasePath } from "@/lib/base-path";
 import { cn } from "@/lib/utils";
+import { useBlogSearch } from "../blog/use-blog-search";
 import { BarsIcon, CloseIcon } from "../icons";
 import { homeLinks, logos, navItems, type HeaderLink } from "./home-content";
 import { ButtonArrow } from "./ui";
 
-function SearchField({ className, autoFocus }: { className?: string; autoFocus?: boolean }) {
+function SearchField({
+  className,
+  autoFocus,
+  onSearch,
+}: {
+  className?: string;
+  autoFocus?: boolean;
+  /** Called after a search is sent (the mobile menu closes itself). */
+  onSearch?: () => void;
+}) {
+  const search = useBlogSearch();
   return (
-    <form action="/blog/busca" role="search" className={cn("relative", className)}>
+    <form
+      action={withBasePath("/blog/busca")}
+      onSubmit={(event) => {
+        search(event);
+        onSearch?.();
+      }}
+      role="search"
+      className={cn("relative", className)}
+    >
       <Search className="pointer-events-none absolute top-1/2 left-4 size-4 -translate-y-1/2 text-white/75" />
       <input
         type="search"
@@ -89,7 +109,7 @@ export function GlassHeader({
               item.children ? (
                 <div key={item.href} className="group relative">
                   <a
-                    href={item.href}
+                    href={withBasePath(item.href)}
                     className="flex items-center gap-1 rounded-full px-4 py-2 text-[15px] font-medium text-white/85 transition-colors duration-300 group-focus-within:bg-white/12 group-hover:bg-white/12 group-hover:text-white"
                   >
                     {item.label}
@@ -101,7 +121,7 @@ export function GlassHeader({
                       {item.children.map((child) => (
                         <li key={child.href}>
                           <a
-                            href={child.href}
+                            href={withBasePath(child.href)}
                             className="block rounded-2xl px-4 py-3 transition-colors duration-200 hover:bg-white/12"
                           >
                             <span className="block text-[15px] font-semibold text-white">{child.label}</span>
@@ -119,7 +139,7 @@ export function GlassHeader({
               ) : (
                 <a
                   key={item.href}
-                  href={item.href}
+                  href={withBasePath(item.href)}
                   className="rounded-full px-4 py-2 text-[15px] font-medium text-white/85 transition-colors duration-300 hover:bg-white/12 hover:text-white"
                 >
                   {item.label}
@@ -181,12 +201,12 @@ export function GlassHeader({
           )}
           inert={!open}
         >
-          {search && <SearchField className="mb-2" />}
+          {search && <SearchField className="mb-2" onSearch={close} />}
           <nav aria-label="Menu" className="flex flex-col">
             {links.map((item) => (
               <div key={item.href}>
                 <a
-                  href={item.href}
+                  href={withBasePath(item.href)}
                   onClick={close}
                   className="block rounded-2xl px-4 py-3 text-[17px] font-medium text-white/90 transition-colors hover:bg-white/10"
                 >
@@ -197,7 +217,7 @@ export function GlassHeader({
                     {item.children.map((child) => (
                       <a
                         key={child.href}
-                        href={child.href}
+                        href={withBasePath(child.href)}
                         onClick={close}
                         className="rounded-full bg-white/12 px-3 py-1.5 text-[14px] font-medium text-white"
                       >

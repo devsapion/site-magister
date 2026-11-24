@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import { withBasePath } from "@/lib/base-path";
 import "./globals.css";
 
 // Self-hosted copies of the Google Fonts files the source page loads.
@@ -42,7 +43,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"),
   title: "Maior Plataforma de Formação de Professores do Brasil - Sapion Magister",
   description,
-  icons: { icon: "/sites/magister/images/favicon.png" },
+  icons: { icon: withBasePath("/sites/magister/images/favicon.png") },
   openGraph: {
     type: "website",
     locale: "pt_BR",

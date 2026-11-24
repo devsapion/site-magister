@@ -46,6 +46,21 @@ export interface BlogPost {
   html: string;
 }
 
+/** What post cards show: the post without its body, light enough to hand to client components. */
+export type PostSummary = Omit<BlogPost, "headings" | "html">;
+
+export const toSummary = (post: BlogPost): PostSummary => ({
+  slug: post.slug,
+  title: post.title,
+  excerpt: post.excerpt,
+  date: post.date,
+  modified: post.modified,
+  category: post.category,
+  author: post.author,
+  cover: post.cover,
+  readingMinutes: post.readingMinutes,
+});
+
 export interface Page<T> {
   items: T[];
   page: number;
@@ -96,10 +111,14 @@ const normalize = (text: string) =>
 
 const plainText = (html: string) => html.replace(/<[^>]+>/g, " ");
 
-/** Posts containing every word of the query; title matches rank first. */
-export async function searchPosts(query: string): Promise<BlogPost[]> {
+/**
+ * Posts containing every word of the query, title matches first; the latest posts when the query
+ * is empty. Synchronous because the search page runs it in the browser (the static build has no
+ * server to answer `?q=`).
+ */
+export function searchPosts(query: string): BlogPost[] {
   const terms = normalize(query).split(/\s+/).filter(Boolean);
-  if (!terms.length) return [];
+  if (!terms.length) return posts;
   return posts
     .map((post) => {
       const title = normalize(post.title);

@@ -1,6 +1,7 @@
 import { ArrowDown, ChevronRight } from "lucide-react";
 import type { CSSProperties } from "react";
 import type { CatalogTotals } from "@/lib/magister/courses";
+import { withBasePath } from "@/lib/base-path";
 import { cn } from "@/lib/utils";
 import { links, type Trilha } from "../content";
 import { trilhaVisuals } from "../home/home-content";
@@ -69,7 +70,7 @@ function TrailArt() {
 export function TrilhaHero({ trilha, position, totals }: { trilha: Trilha; position: number; totals: CatalogTotals }) {
   const visual = trilhaVisuals[trilha.slug];
   const dark = visual.onGradient === "dark";
-  const iconMask = `url(${visual.icon}) center / contain no-repeat`;
+  const iconMask = `url(${withBasePath(visual.icon)}) center / contain no-repeat`;
 
   return (
     <ParallaxScene
@@ -139,13 +140,13 @@ export function TrilhaHero({ trilha, position, totals }: { trilha: Trilha; posit
             )}
           >
             <li>
-              <a href={links.home} className="transition-opacity hover:opacity-70">
+              <a href={withBasePath(links.home)} className="transition-opacity hover:opacity-70">
                 Início
               </a>
             </li>
             <ChevronRight className="size-3.5 opacity-60" aria-hidden="true" />
             <li>
-              <a href={links.trilhas} className="transition-opacity hover:opacity-70">
+              <a href={withBasePath(links.trilhas)} className="transition-opacity hover:opacity-70">
                 Trilhas
               </a>
             </li>
