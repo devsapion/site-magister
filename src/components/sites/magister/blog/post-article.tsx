@@ -1,4 +1,5 @@
 import { Clock } from "lucide-react";
+import { withBasePathInHtml } from "@/lib/base-path";
 import { cn } from "@/lib/utils";
 import { formatPostDate, getRelatedPosts, type BlogPost } from "@/lib/magister/blog";
 import { links } from "../content";
@@ -78,7 +79,7 @@ export async function PostArticle({ post }: { post: BlogPost }) {
 
         <div className="mx-auto grid max-w-[1160px] gap-12 px-5 py-12 desktop:grid-cols-[minmax(0,1fr)_320px] desktop:gap-16 desktop:py-16">
           <div className="min-w-0">
-            <div className="mg-prose" dangerouslySetInnerHTML={{ __html: post.html }} />
+            <div className="mg-prose" dangerouslySetInnerHTML={{ __html: withBasePathInHtml(post.html) }} />
 
             <div className="mt-12 border-t border-mg-line pt-8">
               <ShareButtons url={url} title={post.title} />

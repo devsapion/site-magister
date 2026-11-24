@@ -1,3 +1,4 @@
+import { withBasePath } from "@/lib/base-path";
 import { getCatalogTotals } from "@/lib/magister/courses";
 import { trilhas, type Trilha } from "../content";
 import { trilhaVisuals } from "./home-content";
@@ -10,7 +11,7 @@ export function TrilhaCard({ trilha }: { trilha: Trilha }) {
   const position = trilhas.indexOf(trilha) + 1;
   return (
     <a
-      href={trilha.href}
+      href={withBasePath(trilha.href)}
       className="group relative flex h-full flex-col items-start rounded-[28px] border border-mg-line bg-white p-6 transition-all duration-300 hover:-translate-y-1.5 hover:border-transparent hover:shadow-[0_30px_60px_-30px_rgba(60,20,140,0.45)]"
     >
       <TrilhaBadge

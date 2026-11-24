@@ -8,10 +8,10 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 
 <!-- END:nextjs-agent-rules -->
 
-# Website Reverse-Engineer Template
+# Sapion Magister — Site
 
 ## What This Is
-A reusable template for reverse-engineering any website into a clean, modern Next.js codebase using AI coding agents. The Next.js + shadcn/ui + Tailwind v4 base is pre-scaffolded — just run `/clone-website <url1> [<url2> ...]`.
+The institutional site of Sapion Magister, a teacher-training platform: home for municipal school networks, learning tracks with their course catalog, blog, free materials and contact. Built with Next.js + shadcn/ui + Tailwind v4. New pages can still be rebuilt from a live source with `/clone-website <url1> [<url2> ...]`.
 
 ## Tech Stack
 - **Framework:** Next.js 16 (App Router, React 19, TypeScript strict)

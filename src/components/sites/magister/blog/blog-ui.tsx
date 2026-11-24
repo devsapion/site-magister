@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
-import { blogCategories, formatPostDate, getBlogCategory, type BlogCategorySlug, type BlogPost } from "@/lib/magister/blog";
+import { blogCategories, formatPostDate, getBlogCategory, type BlogCategorySlug, type PostSummary } from "@/lib/magister/blog";
 import type { FreeMaterial } from "@/lib/magister/materials";
 import { GlassHeader } from "../home/glass-header";
 import { homeLinks, logos, trilhaVisuals, type HeaderLink } from "../home/home-content";
@@ -96,7 +96,7 @@ export function AuthorAvatar({ name, className }: { name: string; className?: st
   );
 }
 
-export function PostMeta({ post, className }: { post: BlogPost; className?: string }) {
+export function PostMeta({ post, className }: { post: PostSummary; className?: string }) {
   return (
     <div className={cn("flex items-center gap-2.5 text-[13px] text-mg-muted", className)}>
       <AuthorAvatar name={post.author.name} className="size-7 text-[11px]" />
@@ -114,7 +114,7 @@ export function PostCover({
   className,
   eager,
 }: {
-  post: BlogPost;
+  post: PostSummary;
   sizes: string;
   className?: string;
   eager?: boolean;
@@ -151,7 +151,7 @@ export function PostCard({
   sizes = "(min-width: 1025px) 270px, (min-width: 768px) 45vw, 80vw",
   eager,
 }: {
-  post: BlogPost;
+  post: PostSummary;
   showCategory?: boolean;
   showMeta?: boolean;
   sizes?: string;
@@ -182,7 +182,7 @@ export function PostGrid({
   showCategory,
   showMeta,
 }: {
-  posts: BlogPost[];
+  posts: PostSummary[];
   showCategory?: boolean;
   showMeta?: boolean;
 }) {
